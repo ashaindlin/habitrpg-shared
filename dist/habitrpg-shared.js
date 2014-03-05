@@ -9370,54 +9370,82 @@ gear = {
     wizard: {
       0: {
         twoHanded: true,
-        text: "Apprentice Staff",
-        notes: 'Practice staff. Confers no benefit.',
+        text: (function() {
+          return i18n.t('weaponWizard0Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponWizard0Notes');
+        }),
         value: 0
       },
       1: {
         twoHanded: true,
-        text: "Wooden Staff",
-        notes: 'Basic implement of carven wood. Increases INT by 3 and PER by 1.',
+        text: (function() {
+          return i18n.t('weaponWizard1Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponWizard1Notes');
+        }),
         int: 3,
         per: 1,
         value: 30
       },
       2: {
         twoHanded: true,
-        text: "Jeweled Staff",
-        notes: 'Focuses power through a precious stone. Increases INT by 6 and PER by 2.',
+        text: (function() {
+          return i18n.t('weaponWizard2Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponWizard2Notes');
+        }),
         int: 6,
         per: 2,
         value: 50
       },
       3: {
         twoHanded: true,
-        text: "Iron Staff",
-        notes: 'Plated in metal to channel heat, cold, and lightning. Increases INT by 9 and PER by 3.',
+        text: (function() {
+          return i18n.t('weaponWizard3Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponWizard3Notes');
+        }),
         int: 9,
         per: 3,
         value: 80
       },
       4: {
         twoHanded: true,
-        text: "Brass Staff",
-        notes: 'As powerful as it is heavy. Increases INT by 12 and PER by 5.',
+        text: (function() {
+          return i18n.t('weaponWizard4Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponWizard4Notes');
+        }),
         int: 12,
         per: 5,
         value: 120
       },
       5: {
         twoHanded: true,
-        text: "Archmage Staff",
-        notes: 'Assists in weaving the most complex of spells. Increases INT by 15 and PER by 7.',
+        text: (function() {
+          return i18n.t('weaponWizard5Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponWizard5Notes');
+        }),
         int: 15,
         per: 7,
         value: 160
       },
       6: {
         twoHanded: true,
-        text: "Golden Staff",
-        notes: 'Fashioned of orichalcum, the alchemic gold, mighty and rare. Increases INT by 18 and PER by 10.',
+        text: (function() {
+          return i18n.t('weaponWizard6Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponWizard6Notes');
+        }),
         int: 18,
         per: 10,
         value: 200,
@@ -9426,43 +9454,71 @@ gear = {
     },
     healer: {
       0: {
-        text: "Novice Rod",
-        notes: 'For healers in training. Confers no benefit.',
+        text: (function() {
+          return i18n.t('weaponHealer0Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponHealer0Notes');
+        }),
         value: 0
       },
       1: {
-        text: "Acolyte Rod",
-        notes: 'Crafted during a healer\'s initiation. Increases INT by 2.',
+        text: (function() {
+          return i18n.t('weaponHealer1Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponHealer1Notes');
+        }),
         int: 2,
         value: 20
       },
       2: {
-        text: "Quartz Rod",
-        notes: 'Topped with a gem bearing curative properties. Increases INT by 3.',
+        text: (function() {
+          return i18n.t('weaponHealer2Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponHealer2Notes');
+        }),
         int: 3,
         value: 30
       },
       3: {
-        text: "Amethyst Rod",
-        notes: 'Purifies poison at a touch. Increases INT by 5.',
+        text: (function() {
+          return i18n.t('weaponHealer3Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponHealer3Notes');
+        }),
         int: 5,
         value: 45
       },
       4: {
-        text: "Physician Rod",
-        notes: 'As much a badge of office as a healing tool. Increases INT by 7.',
+        text: (function() {
+          return i18n.t('weaponHealer4Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponHealer4Notes');
+        }),
         int: 7,
         value: 65
       },
       5: {
-        text: "Royal Scepter",
-        notes: 'Fit to grace the hand of a monarch, or of one who stands at a monarch\'s right hand. Increases INT by 9.',
+        text: (function() {
+          return i18n.t('weaponHealer5Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponHealer5Notes');
+        }),
         int: 9,
         value: 90
       },
       6: {
-        text: "Golden Scepter",
-        notes: 'Soothes the pain of all who look upon it. Increases INT by 11.',
+        text: (function() {
+          return i18n.t('weaponHealer6Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponHealer6Notes');
+        }),
         int: 11,
         value: 120,
         last: true
@@ -9470,8 +9526,12 @@ gear = {
     },
     special: {
       0: {
-        text: "Dark Souls Blade",
-        notes: 'Feasts upon foes\' life essence to power its wicked strokes. Increases STR by 20.',
+        text: (function() {
+          return i18n.t('weaponSpecial0Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecial0Notes');
+        }),
         str: 20,
         value: 150,
         canOwn: (function(u) {
@@ -9480,8 +9540,12 @@ gear = {
         })
       },
       1: {
-        text: "Crystal Blade",
-        notes: 'Its glittering facets tell the tale of a hero. Increases all attributes by 6.',
+        text: (function() {
+          return i18n.t('weaponSpecial1Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecial1Notes');
+        }),
         str: 6,
         per: 6,
         con: 6,
@@ -9493,8 +9557,12 @@ gear = {
         })
       },
       2: {
-        text: "Stephen Weber's Shaft of the Dragon",
-        notes: 'Feel the potency of the dragon surge from within! Increases STR and PER by 25 each.',
+        text: (function() {
+          return i18n.t('weaponSpecial2Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecial2Notes');
+        }),
         str: 25,
         per: 25,
         value: 200,
@@ -9504,8 +9572,12 @@ gear = {
         })
       },
       3: {
-        text: "Mustaine's Milestone Mashing Morning Star",
-        notes: "Meetings, monsters, malaise: managed! Mash! Increases STR, INT, and CON by 17 each.",
+        text: (function() {
+          return i18n.t('weaponSpecial3Text');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecial3Notes');
+        }),
         str: 17,
         int: 17,
         con: 17,
@@ -9516,8 +9588,12 @@ gear = {
         })
       },
       critical: {
-        text: "Critical Hammer of Bug-Crushing",
-        notes: "This champion slew a critical Github foe where many warriors fell. Fashioned from the bones of Bug, this hammer deals a mighty critical hit. Increases STR and PER by 40 each.",
+        text: (function() {
+          return i18n.t('weaponSpecialCriticalText');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecialCriticalNotes');
+        }),
         str: 40,
         per: 40,
         value: 200,
@@ -9531,8 +9607,12 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'warrior';
         }),
-        text: "Yeti-Tamer Spear",
-        notes: 'Limited Edition 2013 Winter Gear! This spear allows its user to command any yeti. Increases STR by 15.',
+        text: (function() {
+          return i18n.t('weaponSpecialYetiText');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecialYetiNotes');
+        }),
         str: 15,
         value: 90
       },
@@ -9541,8 +9621,12 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'rogue';
         }),
-        text: "Ski-sassin Pole",
-        notes: 'Limited Edition 2013 Winter Gear! A weapon capable of destroying hordes of enemies! It also helps the user make very nice parallel turns. Increases STR by 8.',
+        text: (function() {
+          return i18n.t('weaponSpecialSkiText');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecialSkiNotes');
+        }),
         str: 8,
         value: 90
       },
@@ -9552,8 +9636,12 @@ gear = {
           return u.stats["class"] === 'wizard';
         }),
         twoHanded: true,
-        text: "Candy Cane Staff",
-        notes: "Limited Edition 2013 Winter Gear! A powerful mage's staff. Powerfully DELICIOUS, we mean! Two-handed weapon. Increases INT by 15 and PER by 7.",
+        text: (function() {
+          return i18n.t('weaponSpecialCandycaneText');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecialCandycaneNotes');
+        }),
         int: 15,
         per: 7,
         value: 160
@@ -9563,8 +9651,12 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'healer';
         }),
-        text: "Snowflake Wand",
-        notes: 'Limited Edition 2013 Winter Gear! This wand sparkles with unlimited healing power. Increases INT by 9.',
+        text: (function() {
+          return i18n.t('weaponSpecialSnowflakeText');
+        }),
+        notes: (function() {
+          return i18n.t('weaponSpecialSnowflakeNotes');
+        }),
         int: 9,
         value: 90
       }
