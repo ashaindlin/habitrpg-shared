@@ -9237,7 +9237,9 @@ gear = {
           return i18n.t('weaponWarrior1Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWarrior1Notes');
+          return i18n.t('weaponWarrior1Notes', {
+            str: 3
+          });
         }),
         str: 3,
         value: 20
@@ -9247,7 +9249,9 @@ gear = {
           return i18n.t('weaponWarrior2Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWarrior2Notes');
+          return i18n.t('weaponWarrior2Notes', {
+            str: 6
+          });
         }),
         str: 6,
         value: 30
@@ -9257,7 +9261,9 @@ gear = {
           return i18n.t('weaponWarrior3Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWarrior3Notes');
+          return i18n.t('weaponWarrior3Notes', {
+            str: 9
+          });
         }),
         str: 9,
         value: 45
@@ -9267,7 +9273,9 @@ gear = {
           return i18n.t('weaponWarrior4Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWarrior4Notes');
+          return i18n.t('weaponWarrior4Notes', {
+            str: 12
+          });
         }),
         str: 12,
         value: 65
@@ -9277,7 +9285,9 @@ gear = {
           return i18n.t('weaponWarrior5Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWarrior5Notes');
+          return i18n.t('weaponWarrior5Notes', {
+            str: 15
+          });
         }),
         str: 15,
         value: 90
@@ -9287,7 +9297,9 @@ gear = {
           return i18n.t('weaponWarrior6Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWarrior6Notes');
+          return i18n.t('weaponWarrior6Notes', {
+            str: 18
+          });
         }),
         str: 18,
         value: 120,
@@ -9310,7 +9322,9 @@ gear = {
           return i18n.t('weaponRogue1Text');
         }),
         notes: (function() {
-          return i18n.t('weaponRogue1Notes');
+          return i18n.t('weaponRogue1Notes', {
+            str: 2
+          });
         }),
         str: 2,
         value: 20
@@ -9320,7 +9334,9 @@ gear = {
           return i18n.t('weaponRogue2Text');
         }),
         notes: (function() {
-          return i18n.t('weaponRogue2Notes');
+          return i18n.t('weaponRogue2Notes', {
+            str: 3
+          });
         }),
         str: 3,
         value: 35
@@ -9330,7 +9346,9 @@ gear = {
           return i18n.t('weaponRogue3Text');
         }),
         notes: (function() {
-          return i18n.t('weaponRogue3Notes');
+          return i18n.t('weaponRogue3Notes', {
+            str: 4
+          });
         }),
         str: 4,
         value: 50
@@ -9340,7 +9358,9 @@ gear = {
           return i18n.t('weaponRogue4Text');
         }),
         notes: (function() {
-          return i18n.t('weaponRogue4Notes');
+          return i18n.t('weaponRogue4Notes', {
+            str: 6
+          });
         }),
         str: 6,
         value: 70
@@ -9350,7 +9370,9 @@ gear = {
           return i18n.t('weaponRogue5Text');
         }),
         notes: (function() {
-          return i18n.t('weaponRogue5Notes');
+          return i18n.t('weaponRogue5Notes', {
+            str: 8
+          });
         }),
         str: 8,
         value: 90
@@ -9360,7 +9382,9 @@ gear = {
           return i18n.t('weaponRogue6Text');
         }),
         notes: (function() {
-          return i18n.t('weaponRogue6Notes');
+          return i18n.t('weaponRogue6Notes', {
+            str: 10
+          });
         }),
         str: 10,
         value: 120,
@@ -9384,7 +9408,10 @@ gear = {
           return i18n.t('weaponWizard1Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWizard1Notes');
+          return i18n.t('weaponWizard1Notes', {
+            int: 3,
+            per: 1
+          });
         }),
         int: 3,
         per: 1,
@@ -9396,7 +9423,10 @@ gear = {
           return i18n.t('weaponWizard2Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWizard2Notes');
+          return i18n.t('weaponWizard2Notes', {
+            int: 6,
+            per: 2
+          });
         }),
         int: 6,
         per: 2,
@@ -9408,7 +9438,10 @@ gear = {
           return i18n.t('weaponWizard3Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWizard3Notes');
+          return i18n.t('weaponWizard3Notes', {
+            int: 9,
+            per: 3
+          });
         }),
         int: 9,
         per: 3,
@@ -9420,7 +9453,10 @@ gear = {
           return i18n.t('weaponWizard4Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWizard4Notes');
+          return i18n.t('weaponWizard4Notes', {
+            int: 12,
+            per: 5
+          });
         }),
         int: 12,
         per: 5,
@@ -9432,7 +9468,10 @@ gear = {
           return i18n.t('weaponWizard5Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWizard5Notes');
+          return i18n.t('weaponWizard5Notes', {
+            int: 15,
+            per: 7
+          });
         }),
         int: 15,
         per: 7,
@@ -9444,7 +9483,10 @@ gear = {
           return i18n.t('weaponWizard6Text');
         }),
         notes: (function() {
-          return i18n.t('weaponWizard6Notes');
+          return i18n.t('weaponWizard6Notes', {
+            int: 18,
+            per: 10
+          });
         }),
         int: 18,
         per: 10,
@@ -9467,7 +9509,9 @@ gear = {
           return i18n.t('weaponHealer1Text');
         }),
         notes: (function() {
-          return i18n.t('weaponHealer1Notes');
+          return i18n.t('weaponHealer1Notes', {
+            int: 2
+          });
         }),
         int: 2,
         value: 20
@@ -9477,7 +9521,9 @@ gear = {
           return i18n.t('weaponHealer2Text');
         }),
         notes: (function() {
-          return i18n.t('weaponHealer2Notes');
+          return i18n.t('weaponHealer2Notes', {
+            int: 3
+          });
         }),
         int: 3,
         value: 30
@@ -9487,7 +9533,9 @@ gear = {
           return i18n.t('weaponHealer3Text');
         }),
         notes: (function() {
-          return i18n.t('weaponHealer3Notes');
+          return i18n.t('weaponHealer3Notes', {
+            int: 5
+          });
         }),
         int: 5,
         value: 45
@@ -9497,7 +9545,9 @@ gear = {
           return i18n.t('weaponHealer4Text');
         }),
         notes: (function() {
-          return i18n.t('weaponHealer4Notes');
+          return i18n.t('weaponHealer4Notes', {
+            int: 7
+          });
         }),
         int: 7,
         value: 65
@@ -9507,7 +9557,9 @@ gear = {
           return i18n.t('weaponHealer5Text');
         }),
         notes: (function() {
-          return i18n.t('weaponHealer5Notes');
+          return i18n.t('weaponHealer5Notes', {
+            int: 9
+          });
         }),
         int: 9,
         value: 90
@@ -9517,7 +9569,9 @@ gear = {
           return i18n.t('weaponHealer6Text');
         }),
         notes: (function() {
-          return i18n.t('weaponHealer6Notes');
+          return i18n.t('weaponHealer6Notes', {
+            int: 11
+          });
         }),
         int: 11,
         value: 120,
@@ -9530,7 +9584,9 @@ gear = {
           return i18n.t('weaponSpecial0Text');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecial0Notes');
+          return i18n.t('weaponSpecial0Notes', {
+            str: 20
+          });
         }),
         str: 20,
         value: 150,
@@ -9544,7 +9600,9 @@ gear = {
           return i18n.t('weaponSpecial1Text');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecial1Notes');
+          return i18n.t('weaponSpecial1Notes', {
+            attrs: 6
+          });
         }),
         str: 6,
         per: 6,
@@ -9561,7 +9619,9 @@ gear = {
           return i18n.t('weaponSpecial2Text');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecial2Notes');
+          return i18n.t('weaponSpecial2Notes', {
+            attrs: 25
+          });
         }),
         str: 25,
         per: 25,
@@ -9576,7 +9636,9 @@ gear = {
           return i18n.t('weaponSpecial3Text');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecial3Notes');
+          return i18n.t('weaponSpecial3Notes', {
+            attrs: 17
+          });
         }),
         str: 17,
         int: 17,
@@ -9592,7 +9654,9 @@ gear = {
           return i18n.t('weaponSpecialCriticalText');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecialCriticalNotes');
+          return i18n.t('weaponSpecialCriticalNotes', {
+            attrs: 40
+          });
         }),
         str: 40,
         per: 40,
@@ -9611,7 +9675,9 @@ gear = {
           return i18n.t('weaponSpecialYetiText');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecialYetiNotes');
+          return i18n.t('weaponSpecialYetiNotes', {
+            str: 15
+          });
         }),
         str: 15,
         value: 90
@@ -9625,7 +9691,9 @@ gear = {
           return i18n.t('weaponSpecialSkiText');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecialSkiNotes');
+          return i18n.t('weaponSpecialSkiNotes', {
+            str: 8
+          });
         }),
         str: 8,
         value: 90
@@ -9640,7 +9708,10 @@ gear = {
           return i18n.t('weaponSpecialCandycaneText');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecialCandycaneNotes');
+          return i18n.t('weaponSpecialCandycaneNotes', {
+            int: 15,
+            per: 7
+          });
         }),
         int: 15,
         per: 7,
@@ -9655,7 +9726,9 @@ gear = {
           return i18n.t('weaponSpecialSnowflakeText');
         }),
         notes: (function() {
-          return i18n.t('weaponSpecialSnowflakeNotes');
+          return i18n.t('weaponSpecialSnowflakeNotes', {
+            int: 9
+          });
         }),
         int: 9,
         value: 90
@@ -9680,7 +9753,9 @@ gear = {
           return i18n.t('armorWarrior1Text');
         }),
         notes: (function() {
-          return i18n.t('armorWarrior1Notes');
+          return i18n.t('armorWarrior1Notes', {
+            con: 3
+          });
         }),
         con: 3,
         value: 30
@@ -9690,7 +9765,9 @@ gear = {
           return i18n.t('armorWarrior2Text');
         }),
         notes: (function() {
-          return i18n.t('armorWarrior2Notes');
+          return i18n.t('armorWarrior2Notes', {
+            con: 5
+          });
         }),
         con: 5,
         value: 45
@@ -9700,7 +9777,9 @@ gear = {
           return i18n.t('armorWarrior3Text');
         }),
         notes: (function() {
-          return i18n.t('armorWarrior3Notes');
+          return i18n.t('armorWarrior3Notes', {
+            con: 7
+          });
         }),
         con: 7,
         value: 65
@@ -9710,7 +9789,9 @@ gear = {
           return i18n.t('armorWarrior4Text');
         }),
         notes: (function() {
-          return i18n.t('armorWarrior4Notes');
+          return i18n.t('armorWarrior4Notes', {
+            con: 9
+          });
         }),
         con: 9,
         value: 90
@@ -9720,7 +9801,9 @@ gear = {
           return i18n.t('armorWarrior5Text');
         }),
         notes: (function() {
-          return i18n.t('armorWarrior5Notes');
+          return i18n.t('armorWarrior5Notes', {
+            con: 11
+          });
         }),
         con: 11,
         value: 120,
@@ -9733,7 +9816,9 @@ gear = {
           return i18n.t('armorRogue1Text');
         }),
         notes: (function() {
-          return i18n.t('armorRogue1Notes');
+          return i18n.t('armorRogue1Notes', {
+            per: 6
+          });
         }),
         per: 6,
         value: 30
@@ -9743,7 +9828,9 @@ gear = {
           return i18n.t('armorRogue2Text');
         }),
         notes: (function() {
-          return i18n.t('armorRogue2Notes');
+          return i18n.t('armorRogue2Notes', {
+            per: 9
+          });
         }),
         per: 9,
         value: 45
@@ -9753,7 +9840,9 @@ gear = {
           return i18n.t('armorRogue3Text');
         }),
         notes: (function() {
-          return i18n.t('armorRogue3Notes');
+          return i18n.t('armorRogue3Notes', {
+            per: 12
+          });
         }),
         per: 12,
         value: 65
@@ -9763,7 +9852,9 @@ gear = {
           return i18n.t('armorRogue4Text');
         }),
         notes: (function() {
-          return i18n.t('armorRogue4Notes');
+          return i18n.t('armorRogue4Notes', {
+            per: 15
+          });
         }),
         per: 15,
         value: 90
@@ -9773,7 +9864,9 @@ gear = {
           return i18n.t('armorRogue5Text');
         }),
         notes: (function() {
-          return i18n.t('armorRogue5Notes');
+          return i18n.t('armorRogue5Notes', {
+            per: 18
+          });
         }),
         per: 18,
         value: 120,
@@ -9786,7 +9879,9 @@ gear = {
           return i18n.t('armorWizard1Text');
         }),
         notes: (function() {
-          return i18n.t('armorWizard1Notes');
+          return i18n.t('armorWizard1Notes', {
+            int: 2
+          });
         }),
         int: 2,
         value: 30
@@ -9796,7 +9891,9 @@ gear = {
           return i18n.t('armorWizard2Text');
         }),
         notes: (function() {
-          return i18n.t('armorWizard2Notes');
+          return i18n.t('armorWizard2Notes', {
+            int: 4
+          });
         }),
         int: 4,
         value: 45
@@ -9806,7 +9903,9 @@ gear = {
           return i18n.t('armorWizard3Text');
         }),
         notes: (function() {
-          return i18n.t('armorWizard3Notes');
+          return i18n.t('armorWizard3Notes', {
+            int: 6
+          });
         }),
         int: 6,
         value: 65
@@ -9816,7 +9915,9 @@ gear = {
           return i18n.t('armorWizard4Text');
         }),
         notes: (function() {
-          return i18n.t('armorWizard4Notes');
+          return i18n.t('armorWizard4Notes', {
+            int: 9
+          });
         }),
         int: 9,
         value: 90
@@ -9826,7 +9927,9 @@ gear = {
           return i18n.t('armorWizard5Text');
         }),
         notes: (function() {
-          return i18n.t('armorWizard5Notes');
+          return i18n.t('armorWizard5Notes', {
+            int: 12
+          });
         }),
         int: 12,
         value: 120,
@@ -9839,7 +9942,9 @@ gear = {
           return i18n.t('armorHealer1Text');
         }),
         notes: (function() {
-          return i18n.t('armorHealer1Notes');
+          return i18n.t('armorHealer1Notes', {
+            con: 6
+          });
         }),
         con: 6,
         value: 30
@@ -9849,7 +9954,9 @@ gear = {
           return i18n.t('armorHealer2Text');
         }),
         notes: (function() {
-          return i18n.t('armorHealer2Notes');
+          return i18n.t('armorHealer2Notes', {
+            con: 9
+          });
         }),
         con: 9,
         value: 45
@@ -9859,7 +9966,9 @@ gear = {
           return i18n.t('armorHealer3Text');
         }),
         notes: (function() {
-          return i18n.t('armorHealer3Notes');
+          return i18n.t('armorHealer3Notes', {
+            con: 12
+          });
         }),
         con: 12,
         value: 65
@@ -9869,7 +9978,9 @@ gear = {
           return i18n.t('armorHealer4Text');
         }),
         notes: (function() {
-          return i18n.t('armorHealer4Notes');
+          return i18n.t('armorHealer4Notes', {
+            con: 15
+          });
         }),
         con: 15,
         value: 90
@@ -9879,7 +9990,9 @@ gear = {
           return i18n.t('armorHealer5Text');
         }),
         notes: (function() {
-          return i18n.t('armorHealer5Notes');
+          return i18n.t('armorHealer5Notes', {
+            con: 18
+          });
         }),
         con: 18,
         value: 120,
@@ -9892,7 +10005,9 @@ gear = {
           return i18n.t('armorSpecial0Text');
         }),
         notes: (function() {
-          return i18n.t('armorSpecial0Notes');
+          return i18n.t('armorSpecial0Notes', {
+            con: 20
+          });
         }),
         con: 20,
         value: 150,
@@ -9906,7 +10021,9 @@ gear = {
           return i18n.t('armorSpecial1Text');
         }),
         notes: (function() {
-          return i18n.t('armorSpecial1Notes');
+          return i18n.t('armorSpecial1Notes', {
+            attrs: 6
+          });
         }),
         con: 6,
         str: 6,
@@ -9923,7 +10040,9 @@ gear = {
           return i18n.t('armorSpecial2Text');
         }),
         notes: (function() {
-          return i18n.t('armorSpecial2Notes');
+          return i18n.t('armorSpecial2Notes', {
+            attrs: 25
+          });
         }),
         int: 25,
         con: 25,
@@ -9942,7 +10061,9 @@ gear = {
           return i18n.t('armorSpecialYetiText');
         }),
         notes: (function() {
-          return i18n.t('armorSpecialYetiNotes');
+          return i18n.t('armorSpecialYetiNotes', {
+            con: 9
+          });
         }),
         con: 9,
         value: 90
@@ -9956,7 +10077,9 @@ gear = {
           return i18n.t('armorSpecialSkiText');
         }),
         notes: (function() {
-          return i18n.t('armorSpecialSkiText');
+          return i18n.t('armorSpecialSkiText', {
+            per: 15
+          });
         }),
         per: 15,
         value: 90
@@ -9970,7 +10093,9 @@ gear = {
           return i18n.t('armorSpecialCandycaneText');
         }),
         notes: (function() {
-          return i18n.t('armorSpecialCandycaneNotes');
+          return i18n.t('armorSpecialCandycaneNotes', {
+            int: 9
+          });
         }),
         int: 9,
         value: 90
@@ -9984,7 +10109,9 @@ gear = {
           return i18n.t('armorSpecialSnowflakeText');
         }),
         notes: (function() {
-          return i18n.t('armorSpecialSnowflakeNotes');
+          return i18n.t('armorSpecialSnowflakeNotes', {
+            con: 15
+          });
         }),
         con: 15,
         value: 90
