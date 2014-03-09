@@ -120,7 +120,7 @@ gear =
       snowflake:  event: events.winter, canOwn: ((u)->u.stats.class is 'healer'  ), text: (-> i18n.t('armorSpecialSnowflakeText')), notes: (-> i18n.t('armorSpecialSnowflakeNotes', {con: 15})), con: 15, value:90
       birthday:   event: events.birthday, text: (-> i18n.t('armorSpecialBirthdayText')), notes: (-> i18n.t('armorSpecialBirthdayNotes')), value: 0
     mystery:
-      201402: text: 'Messenger Robes', notes: "Shimmering and strong, these robes have many pockets to carry letters.", mystery:mystery['201402'], value: 10
+      201402: text: (-> i18n.t('armorMystery201402Text')), notes: (-> i18n.t('armorMystery201402Notes')), mystery:mystery['201402'], value: 10
 
   head:
     base:
@@ -166,7 +166,7 @@ gear =
       snowflake:  event: events.winter, canOwn: ((u)->u.stats.class is 'healer'  ), text: (-> i18n.t('headSpecialSnowflakeText')), notes: (-> i18n.t('headSpecialSnowflakeNotes', {int: 7})), int: 7, value:60
 
     mystery:
-      201402: text: 'Winged Helm', notes: "This winged circlet imbues the wearer with the speed of the wind!", mystery:mystery['201402'], value: 10
+      201402: text: (-> i18n.t('headMystery201402Text')), notes: (-> i18n.t('headMystery201402Notes')), mystery:mystery['201402'], value: 10
 
   shield:
     base:
@@ -209,7 +209,7 @@ gear =
     base:
       0: text: (-> i18n.t('backBase0Text')), notes: (-> i18n.t('backBase0Notes')), value:0, last:true
     mystery:
-      201402: text: 'Golden Wings', notes: "These shining wings have feathers that glitter in the sun!", mystery:mystery['201402'], value: 10
+      201402: text: (-> i18n.t('backMystery201402Text')), notes: (-> i18n.t('headMystery201402Notes')), mystery:mystery['201402'], value: 10
 
 ###
   The gear is exported as a tree (defined above), and a flat list (eg, {weapon_healer_1: .., shield_special_0: ...}) since
