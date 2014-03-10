@@ -9169,7 +9169,7 @@ process.chdir = function (dir) {
 }).call(this);
 
 },{}],5:[function(require,module,exports){
-var api, classes, diminishingReturns, events, gear, gearTypes, i18n, moment, mystery, repeat, _;
+var api, classes, diminishingReturns, events, gear, gearTypes, i18n, moment, mystery, repeat, t, _;
 
 _ = require('lodash');
 
@@ -9178,6 +9178,15 @@ api = module.exports;
 moment = require('moment');
 
 i18n = require('./i18n.coffee');
+
+t = function(string, vars) {
+  return function(lang) {
+    if (vars == null) {
+      vars = lang;
+    }
+    return i18n.t(string, vars, lang);
+  };
+};
 
 
 /*
@@ -9213,93 +9222,61 @@ gear = {
   weapon: {
     base: {
       0: {
-        text: (function() {
-          return i18n.t('weaponBase0Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponBase0Notes');
-        }),
+        text: t('weaponBase0Text'),
+        notes: t('weaponBase0Notes'),
         value: 0
       }
     },
     warrior: {
       0: {
-        text: (function() {
-          return i18n.t('weaponWarrior0Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWarrior0Notes');
-        }),
+        text: t('weaponWarrior0Text'),
+        notes: t('weaponWarrior0Notes'),
         value: 0
       },
       1: {
-        text: (function() {
-          return i18n.t('weaponWarrior1Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWarrior1Notes', {
-            str: 3
-          });
+        text: t('weaponWarrior1Text'),
+        notes: t('weaponWarrior1Notes', {
+          str: 3
         }),
         str: 3,
         value: 20
       },
       2: {
-        text: (function() {
-          return i18n.t('weaponWarrior2Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWarrior2Notes', {
-            str: 6
-          });
+        text: t('weaponWarrior2Text'),
+        notes: t('weaponWarrior2Notes', {
+          str: 6
         }),
         str: 6,
         value: 30
       },
       3: {
-        text: (function() {
-          return i18n.t('weaponWarrior3Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWarrior3Notes', {
-            str: 9
-          });
+        text: t('weaponWarrior3Text'),
+        notes: t('weaponWarrior3Notes', {
+          str: 9
         }),
         str: 9,
         value: 45
       },
       4: {
-        text: (function() {
-          return i18n.t('weaponWarrior4Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWarrior4Notes', {
-            str: 12
-          });
+        text: t('weaponWarrior4Text'),
+        notes: t('weaponWarrior4Notes', {
+          str: 12
         }),
         str: 12,
         value: 65
       },
       5: {
-        text: (function() {
-          return i18n.t('weaponWarrior5Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWarrior5Notes', {
-            str: 15
-          });
+        text: t('weaponWarrior5Text'),
+        notes: t('weaponWarrior5Notes', {
+          str: 15
         }),
         str: 15,
         value: 90
       },
       6: {
-        text: (function() {
-          return i18n.t('weaponWarrior6Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWarrior6Notes', {
-            str: 18
-          });
+        text: t('weaponWarrior6Text'),
+        notes: t('weaponWarrior6Notes', {
+          str: 18
         }),
         str: 18,
         value: 120,
@@ -9308,83 +9285,55 @@ gear = {
     },
     rogue: {
       0: {
-        text: (function() {
-          return i18n.t('weaponRogue0Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponRogue0Notes');
-        }),
+        text: t('weaponRogue0Text'),
+        notes: t('weaponRogue0Notes'),
         str: 0,
         value: 0
       },
       1: {
-        text: (function() {
-          return i18n.t('weaponRogue1Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponRogue1Notes', {
-            str: 2
-          });
+        text: t('weaponRogue1Text'),
+        notes: t('weaponRogue1Notes', {
+          str: 2
         }),
         str: 2,
         value: 20
       },
       2: {
-        text: (function() {
-          return i18n.t('weaponRogue2Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponRogue2Notes', {
-            str: 3
-          });
+        text: t('weaponRogue2Text'),
+        notes: t('weaponRogue2Notes', {
+          str: 3
         }),
         str: 3,
         value: 35
       },
       3: {
-        text: (function() {
-          return i18n.t('weaponRogue3Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponRogue3Notes', {
-            str: 4
-          });
+        text: t('weaponRogue3Text'),
+        notes: t('weaponRogue3Notes', {
+          str: 4
         }),
         str: 4,
         value: 50
       },
       4: {
-        text: (function() {
-          return i18n.t('weaponRogue4Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponRogue4Notes', {
-            str: 6
-          });
+        text: t('weaponRogue4Text'),
+        notes: t('weaponRogue4Notes', {
+          str: 6
         }),
         str: 6,
         value: 70
       },
       5: {
-        text: (function() {
-          return i18n.t('weaponRogue5Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponRogue5Notes', {
-            str: 8
-          });
+        text: t('weaponRogue5Text'),
+        notes: t('weaponRogue5Notes', {
+          str: 8
         }),
         str: 8,
         value: 90
       },
       6: {
-        text: (function() {
-          return i18n.t('weaponRogue6Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponRogue6Notes', {
-            str: 10
-          });
+        text: t('weaponRogue6Text'),
+        notes: t('weaponRogue6Notes', {
+          str: 10
         }),
         str: 10,
         value: 120,
@@ -9394,24 +9343,16 @@ gear = {
     wizard: {
       0: {
         twoHanded: true,
-        text: (function() {
-          return i18n.t('weaponWizard0Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWizard0Notes');
-        }),
+        text: t('weaponWizard0Text'),
+        notes: t('weaponWizard0Notes'),
         value: 0
       },
       1: {
         twoHanded: true,
-        text: (function() {
-          return i18n.t('weaponWizard1Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWizard1Notes', {
-            int: 3,
-            per: 1
-          });
+        text: t('weaponWizard1Text'),
+        notes: t('weaponWizard1Notes', {
+          int: 3,
+          per: 1
         }),
         int: 3,
         per: 1,
@@ -9419,14 +9360,10 @@ gear = {
       },
       2: {
         twoHanded: true,
-        text: (function() {
-          return i18n.t('weaponWizard2Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWizard2Notes', {
-            int: 6,
-            per: 2
-          });
+        text: t('weaponWizard2Text'),
+        notes: t('weaponWizard2Notes', {
+          int: 6,
+          per: 2
         }),
         int: 6,
         per: 2,
@@ -9434,14 +9371,10 @@ gear = {
       },
       3: {
         twoHanded: true,
-        text: (function() {
-          return i18n.t('weaponWizard3Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWizard3Notes', {
-            int: 9,
-            per: 3
-          });
+        text: t('weaponWizard3Text'),
+        notes: t('weaponWizard3Notes', {
+          int: 9,
+          per: 3
         }),
         int: 9,
         per: 3,
@@ -9449,14 +9382,10 @@ gear = {
       },
       4: {
         twoHanded: true,
-        text: (function() {
-          return i18n.t('weaponWizard4Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWizard4Notes', {
-            int: 12,
-            per: 5
-          });
+        text: t('weaponWizard4Text'),
+        notes: t('weaponWizard4Notes', {
+          int: 12,
+          per: 5
         }),
         int: 12,
         per: 5,
@@ -9464,14 +9393,10 @@ gear = {
       },
       5: {
         twoHanded: true,
-        text: (function() {
-          return i18n.t('weaponWizard5Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWizard5Notes', {
-            int: 15,
-            per: 7
-          });
+        text: t('weaponWizard5Text'),
+        notes: t('weaponWizard5Notes', {
+          int: 15,
+          per: 7
         }),
         int: 15,
         per: 7,
@@ -9479,14 +9404,10 @@ gear = {
       },
       6: {
         twoHanded: true,
-        text: (function() {
-          return i18n.t('weaponWizard6Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponWizard6Notes', {
-            int: 18,
-            per: 10
-          });
+        text: t('weaponWizard6Text'),
+        notes: t('weaponWizard6Notes', {
+          int: 18,
+          per: 10
         }),
         int: 18,
         per: 10,
@@ -9496,82 +9417,54 @@ gear = {
     },
     healer: {
       0: {
-        text: (function() {
-          return i18n.t('weaponHealer0Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponHealer0Notes');
-        }),
+        text: t('weaponHealer0Text'),
+        notes: t('weaponHealer0Notes'),
         value: 0
       },
       1: {
-        text: (function() {
-          return i18n.t('weaponHealer1Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponHealer1Notes', {
-            int: 2
-          });
+        text: t('weaponHealer1Text'),
+        notes: t('weaponHealer1Notes', {
+          int: 2
         }),
         int: 2,
         value: 20
       },
       2: {
-        text: (function() {
-          return i18n.t('weaponHealer2Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponHealer2Notes', {
-            int: 3
-          });
+        text: t('weaponHealer2Text'),
+        notes: t('weaponHealer2Notes', {
+          int: 3
         }),
         int: 3,
         value: 30
       },
       3: {
-        text: (function() {
-          return i18n.t('weaponHealer3Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponHealer3Notes', {
-            int: 5
-          });
+        text: t('weaponHealer3Text'),
+        notes: t('weaponHealer3Notes', {
+          int: 5
         }),
         int: 5,
         value: 45
       },
       4: {
-        text: (function() {
-          return i18n.t('weaponHealer4Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponHealer4Notes', {
-            int: 7
-          });
+        text: t('weaponHealer4Text'),
+        notes: t('weaponHealer4Notes', {
+          int: 7
         }),
         int: 7,
         value: 65
       },
       5: {
-        text: (function() {
-          return i18n.t('weaponHealer5Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponHealer5Notes', {
-            int: 9
-          });
+        text: t('weaponHealer5Text'),
+        notes: t('weaponHealer5Notes', {
+          int: 9
         }),
         int: 9,
         value: 90
       },
       6: {
-        text: (function() {
-          return i18n.t('weaponHealer6Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponHealer6Notes', {
-            int: 11
-          });
+        text: t('weaponHealer6Text'),
+        notes: t('weaponHealer6Notes', {
+          int: 11
         }),
         int: 11,
         value: 120,
@@ -9580,13 +9473,9 @@ gear = {
     },
     special: {
       0: {
-        text: (function() {
-          return i18n.t('weaponSpecial0Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecial0Notes', {
-            str: 20
-          });
+        text: t('weaponSpecial0Text'),
+        notes: t('weaponSpecial0Notes', {
+          str: 20
         }),
         str: 20,
         value: 150,
@@ -9596,13 +9485,9 @@ gear = {
         })
       },
       1: {
-        text: (function() {
-          return i18n.t('weaponSpecial1Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecial1Notes', {
-            attrs: 6
-          });
+        text: t('weaponSpecial1Text'),
+        notes: t('weaponSpecial1Notes', {
+          attrs: 6
         }),
         str: 6,
         per: 6,
@@ -9615,13 +9500,9 @@ gear = {
         })
       },
       2: {
-        text: (function() {
-          return i18n.t('weaponSpecial2Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecial2Notes', {
-            attrs: 25
-          });
+        text: t('weaponSpecial2Text'),
+        notes: t('weaponSpecial2Notes', {
+          attrs: 25
         }),
         str: 25,
         per: 25,
@@ -9632,13 +9513,9 @@ gear = {
         })
       },
       3: {
-        text: (function() {
-          return i18n.t('weaponSpecial3Text');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecial3Notes', {
-            attrs: 17
-          });
+        text: t('weaponSpecial3Text'),
+        notes: t('weaponSpecial3Notes', {
+          attrs: 17
         }),
         str: 17,
         int: 17,
@@ -9650,13 +9527,9 @@ gear = {
         })
       },
       critical: {
-        text: (function() {
-          return i18n.t('weaponSpecialCriticalText');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecialCriticalNotes', {
-            attrs: 40
-          });
+        text: t('weaponSpecialCriticalText'),
+        notes: t('weaponSpecialCriticalNotes', {
+          attrs: 40
         }),
         str: 40,
         per: 40,
@@ -9671,13 +9544,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'warrior';
         }),
-        text: (function() {
-          return i18n.t('weaponSpecialYetiText');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecialYetiNotes', {
-            str: 15
-          });
+        text: t('weaponSpecialYetiText'),
+        notes: t('weaponSpecialYetiNotes', {
+          str: 15
         }),
         str: 15,
         value: 90
@@ -9687,13 +9556,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'rogue';
         }),
-        text: (function() {
-          return i18n.t('weaponSpecialSkiText');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecialSkiNotes', {
-            str: 8
-          });
+        text: t('weaponSpecialSkiText'),
+        notes: t('weaponSpecialSkiNotes', {
+          str: 8
         }),
         str: 8,
         value: 90
@@ -9704,14 +9569,10 @@ gear = {
           return u.stats["class"] === 'wizard';
         }),
         twoHanded: true,
-        text: (function() {
-          return i18n.t('weaponSpecialCandycaneText');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecialCandycaneNotes', {
-            int: 15,
-            per: 7
-          });
+        text: t('weaponSpecialCandycaneText'),
+        notes: t('weaponSpecialCandycaneNotes', {
+          int: 15,
+          per: 7
         }),
         int: 15,
         per: 7,
@@ -9722,13 +9583,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'healer';
         }),
-        text: (function() {
-          return i18n.t('weaponSpecialSnowflakeText');
-        }),
-        notes: (function() {
-          return i18n.t('weaponSpecialSnowflakeNotes', {
-            int: 9
-          });
+        text: t('weaponSpecialSnowflakeText'),
+        notes: t('weaponSpecialSnowflakeNotes', {
+          int: 9
         }),
         int: 9,
         value: 90
@@ -9738,72 +9595,48 @@ gear = {
   armor: {
     base: {
       0: {
-        text: (function() {
-          return i18n.t('armorBase0Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorBase0Notes');
-        }),
+        text: t('armorBase0Text'),
+        notes: t('armorBase0Notes'),
         value: 0
       }
     },
     warrior: {
       1: {
-        text: (function() {
-          return i18n.t('armorWarrior1Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWarrior1Notes', {
-            con: 3
-          });
+        text: t('armorWarrior1Text'),
+        notes: t('armorWarrior1Notes', {
+          con: 3
         }),
         con: 3,
         value: 30
       },
       2: {
-        text: (function() {
-          return i18n.t('armorWarrior2Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWarrior2Notes', {
-            con: 5
-          });
+        text: t('armorWarrior2Text'),
+        notes: t('armorWarrior2Notes', {
+          con: 5
         }),
         con: 5,
         value: 45
       },
       3: {
-        text: (function() {
-          return i18n.t('armorWarrior3Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWarrior3Notes', {
-            con: 7
-          });
+        text: t('armorWarrior3Text'),
+        notes: t('armorWarrior3Notes', {
+          con: 7
         }),
         con: 7,
         value: 65
       },
       4: {
-        text: (function() {
-          return i18n.t('armorWarrior4Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWarrior4Notes', {
-            con: 9
-          });
+        text: t('armorWarrior4Text'),
+        notes: t('armorWarrior4Notes', {
+          con: 9
         }),
         con: 9,
         value: 90
       },
       5: {
-        text: (function() {
-          return i18n.t('armorWarrior5Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWarrior5Notes', {
-            con: 11
-          });
+        text: t('armorWarrior5Text'),
+        notes: t('armorWarrior5Notes', {
+          con: 11
         }),
         con: 11,
         value: 120,
@@ -9812,61 +9645,41 @@ gear = {
     },
     rogue: {
       1: {
-        text: (function() {
-          return i18n.t('armorRogue1Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorRogue1Notes', {
-            per: 6
-          });
+        text: t('armorRogue1Text'),
+        notes: t('armorRogue1Notes', {
+          per: 6
         }),
         per: 6,
         value: 30
       },
       2: {
-        text: (function() {
-          return i18n.t('armorRogue2Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorRogue2Notes', {
-            per: 9
-          });
+        text: t('armorRogue2Text'),
+        notes: t('armorRogue2Notes', {
+          per: 9
         }),
         per: 9,
         value: 45
       },
       3: {
-        text: (function() {
-          return i18n.t('armorRogue3Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorRogue3Notes', {
-            per: 12
-          });
+        text: t('armorRogue3Text'),
+        notes: t('armorRogue3Notes', {
+          per: 12
         }),
         per: 12,
         value: 65
       },
       4: {
-        text: (function() {
-          return i18n.t('armorRogue4Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorRogue4Notes', {
-            per: 15
-          });
+        text: t('armorRogue4Text'),
+        notes: t('armorRogue4Notes', {
+          per: 15
         }),
         per: 15,
         value: 90
       },
       5: {
-        text: (function() {
-          return i18n.t('armorRogue5Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorRogue5Notes', {
-            per: 18
-          });
+        text: t('armorRogue5Text'),
+        notes: t('armorRogue5Notes', {
+          per: 18
         }),
         per: 18,
         value: 120,
@@ -9875,61 +9688,41 @@ gear = {
     },
     wizard: {
       1: {
-        text: (function() {
-          return i18n.t('armorWizard1Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWizard1Notes', {
-            int: 2
-          });
+        text: t('armorWizard1Text'),
+        notes: t('armorWizard1Notes', {
+          int: 2
         }),
         int: 2,
         value: 30
       },
       2: {
-        text: (function() {
-          return i18n.t('armorWizard2Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWizard2Notes', {
-            int: 4
-          });
+        text: t('armorWizard2Text'),
+        notes: t('armorWizard2Notes', {
+          int: 4
         }),
         int: 4,
         value: 45
       },
       3: {
-        text: (function() {
-          return i18n.t('armorWizard3Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWizard3Notes', {
-            int: 6
-          });
+        text: t('armorWizard3Text'),
+        notes: t('armorWizard3Notes', {
+          int: 6
         }),
         int: 6,
         value: 65
       },
       4: {
-        text: (function() {
-          return i18n.t('armorWizard4Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWizard4Notes', {
-            int: 9
-          });
+        text: t('armorWizard4Text'),
+        notes: t('armorWizard4Notes', {
+          int: 9
         }),
         int: 9,
         value: 90
       },
       5: {
-        text: (function() {
-          return i18n.t('armorWizard5Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorWizard5Notes', {
-            int: 12
-          });
+        text: t('armorWizard5Text'),
+        notes: t('armorWizard5Notes', {
+          int: 12
         }),
         int: 12,
         value: 120,
@@ -9938,61 +9731,41 @@ gear = {
     },
     healer: {
       1: {
-        text: (function() {
-          return i18n.t('armorHealer1Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorHealer1Notes', {
-            con: 6
-          });
+        text: t('armorHealer1Text'),
+        notes: t('armorHealer1Notes', {
+          con: 6
         }),
         con: 6,
         value: 30
       },
       2: {
-        text: (function() {
-          return i18n.t('armorHealer2Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorHealer2Notes', {
-            con: 9
-          });
+        text: t('armorHealer2Text'),
+        notes: t('armorHealer2Notes', {
+          con: 9
         }),
         con: 9,
         value: 45
       },
       3: {
-        text: (function() {
-          return i18n.t('armorHealer3Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorHealer3Notes', {
-            con: 12
-          });
+        text: t('armorHealer3Text'),
+        notes: t('armorHealer3Notes', {
+          con: 12
         }),
         con: 12,
         value: 65
       },
       4: {
-        text: (function() {
-          return i18n.t('armorHealer4Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorHealer4Notes', {
-            con: 15
-          });
+        text: t('armorHealer4Text'),
+        notes: t('armorHealer4Notes', {
+          con: 15
         }),
         con: 15,
         value: 90
       },
       5: {
-        text: (function() {
-          return i18n.t('armorHealer5Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorHealer5Notes', {
-            con: 18
-          });
+        text: t('armorHealer5Text'),
+        notes: t('armorHealer5Notes', {
+          con: 18
         }),
         con: 18,
         value: 120,
@@ -10001,13 +9774,9 @@ gear = {
     },
     special: {
       0: {
-        text: (function() {
-          return i18n.t('armorSpecial0Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorSpecial0Notes', {
-            con: 20
-          });
+        text: t('armorSpecial0Text'),
+        notes: t('armorSpecial0Notes', {
+          con: 20
         }),
         con: 20,
         value: 150,
@@ -10017,13 +9786,9 @@ gear = {
         })
       },
       1: {
-        text: (function() {
-          return i18n.t('armorSpecial1Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorSpecial1Notes', {
-            attrs: 6
-          });
+        text: t('armorSpecial1Text'),
+        notes: t('armorSpecial1Notes', {
+          attrs: 6
         }),
         con: 6,
         str: 6,
@@ -10036,13 +9801,9 @@ gear = {
         })
       },
       2: {
-        text: (function() {
-          return i18n.t('armorSpecial2Text');
-        }),
-        notes: (function() {
-          return i18n.t('armorSpecial2Notes', {
-            attrs: 25
-          });
+        text: t('armorSpecial2Text'),
+        notes: t('armorSpecial2Notes', {
+          attrs: 25
         }),
         int: 25,
         con: 25,
@@ -10057,13 +9818,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'warrior';
         }),
-        text: (function() {
-          return i18n.t('armorSpecialYetiText');
-        }),
-        notes: (function() {
-          return i18n.t('armorSpecialYetiNotes', {
-            con: 9
-          });
+        text: t('armorSpecialYetiText'),
+        notes: t('armorSpecialYetiNotes', {
+          con: 9
         }),
         con: 9,
         value: 90
@@ -10073,13 +9830,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'rogue';
         }),
-        text: (function() {
-          return i18n.t('armorSpecialSkiText');
-        }),
-        notes: (function() {
-          return i18n.t('armorSpecialSkiText', {
-            per: 15
-          });
+        text: t('armorSpecialSkiText'),
+        notes: t('armorSpecialSkiText', {
+          per: 15
         }),
         per: 15,
         value: 90
@@ -10089,13 +9842,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'wizard';
         }),
-        text: (function() {
-          return i18n.t('armorSpecialCandycaneText');
-        }),
-        notes: (function() {
-          return i18n.t('armorSpecialCandycaneNotes', {
-            int: 9
-          });
+        text: t('armorSpecialCandycaneText'),
+        notes: t('armorSpecialCandycaneNotes', {
+          int: 9
         }),
         int: 9,
         value: 90
@@ -10105,32 +9854,24 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'healer';
         }),
-        text: (function() {
-          return i18n.t('armorSpecialSnowflakeText');
-        }),
-        notes: (function() {
-          return i18n.t('armorSpecialSnowflakeNotes', {
-            con: 15
-          });
+        text: t('armorSpecialSnowflakeText'),
+        notes: t('armorSpecialSnowflakeNotes', {
+          con: 15
         }),
         con: 15,
         value: 90
       },
       birthday: {
         event: events.birthday,
-        text: (function() {
-          return i18n.t('armorSpecialBirthdayText');
-        }),
-        notes: (function() {
-          return i18n.t('armorSpecialBirthdayNotes');
-        }),
+        text: t('armorSpecialBirthdayText'),
+        notes: t('armorSpecialBirthdayNotes'),
         value: 0
       }
     },
     mystery: {
       201402: {
-        text: 'Messenger Robes',
-        notes: "Shimmering and strong, these robes have many pockets to carry letters.",
+        text: t('armorMystery201402Text'),
+        notes: t('armorMystery201402Notes'),
         mystery: mystery['201402'],
         value: 10
       }
@@ -10139,72 +9880,48 @@ gear = {
   head: {
     base: {
       0: {
-        text: (function() {
-          return i18n.t('headBase0Text');
-        }),
-        notes: (function() {
-          return i18n.t('headBase0Notes');
-        }),
+        text: t('headBase0Text'),
+        notes: t('headBase0Notes'),
         value: 0
       }
     },
     warrior: {
       1: {
-        text: (function() {
-          return i18n.t('headWarrior1Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWarrior1Notes', {
-            str: 2
-          });
+        text: t('headWarrior1Text'),
+        notes: t('headWarrior1Notes', {
+          str: 2
         }),
         str: 2,
         value: 15
       },
       2: {
-        text: (function() {
-          return i18n.t('headWarrior2Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWarrior2Notes', {
-            str: 4
-          });
+        text: t('headWarrior2Text'),
+        notes: t('headWarrior2Notes', {
+          str: 4
         }),
         str: 4,
         value: 25
       },
       3: {
-        text: (function() {
-          return i18n.t('headWarrior3Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWarrior3Notes', {
-            str: 6
-          });
+        text: t('headWarrior3Text'),
+        notes: t('headWarrior3Notes', {
+          str: 6
         }),
         str: 6,
         value: 40
       },
       4: {
-        text: (function() {
-          return i18n.t('headWarrior4Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWarrior4Notes', {
-            str: 9
-          });
+        text: t('headWarrior4Text'),
+        notes: t('headWarrior4Notes', {
+          str: 9
         }),
         str: 9,
         value: 60
       },
       5: {
-        text: (function() {
-          return i18n.t('headWarrior5Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWarrior5Notes', {
-            str: 12
-          });
+        text: t('headWarrior5Text'),
+        notes: t('headWarrior5Notes', {
+          str: 12
         }),
         str: 12,
         value: 80,
@@ -10213,61 +9930,41 @@ gear = {
     },
     rogue: {
       1: {
-        text: (function() {
-          return i18n.t('headRogue1Text');
-        }),
-        notes: (function() {
-          return i18n.t('headRogue1Notes', {
-            per: 2
-          });
+        text: t('headRogue1Text'),
+        notes: t('headRogue1Notes', {
+          per: 2
         }),
         per: 2,
         value: 15
       },
       2: {
-        text: (function() {
-          return i18n.t('headRogue2Text');
-        }),
-        notes: (function() {
-          return i18n.t('headRogue2Notes', {
-            per: 4
-          });
+        text: t('headRogue2Text'),
+        notes: t('headRogue2Notes', {
+          per: 4
         }),
         per: 4,
         value: 25
       },
       3: {
-        text: (function() {
-          return i18n.t('headRogue3Text');
-        }),
-        notes: (function() {
-          return i18n.t('headRogue3Notes', {
-            per: 6
-          });
+        text: t('headRogue3Text'),
+        notes: t('headRogue3Notes', {
+          per: 6
         }),
         per: 6,
         value: 40
       },
       4: {
-        text: (function() {
-          return i18n.t('headRogue4Text');
-        }),
-        notes: (function() {
-          return i18n.t('headRogue4Notes', {
-            per: 9
-          });
+        text: t('headRogue4Text'),
+        notes: t('headRogue4Notes', {
+          per: 9
         }),
         per: 9,
         value: 60
       },
       5: {
-        text: (function() {
-          return i18n.t('headRogue5Text');
-        }),
-        notes: (function() {
-          return i18n.t('headRogue5Notes', {
-            per: 12
-          });
+        text: t('headRogue5Text'),
+        notes: t('headRogue5Notes', {
+          per: 12
         }),
         per: 12,
         value: 80,
@@ -10276,61 +9973,41 @@ gear = {
     },
     wizard: {
       1: {
-        text: (function() {
-          return i18n.t('headWizard1Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWizard1Notes', {
-            per: 2
-          });
+        text: t('headWizard1Text'),
+        notes: t('headWizard1Notes', {
+          per: 2
         }),
         per: 2,
         value: 15
       },
       2: {
-        text: (function() {
-          return i18n.t('headWizard2Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWizard2Notes', {
-            per: 3
-          });
+        text: t('headWizard2Text'),
+        notes: t('headWizard2Notes', {
+          per: 3
         }),
         per: 3,
         value: 25
       },
       3: {
-        text: (function() {
-          return i18n.t('headWizard3Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWizard3Notes', {
-            per: 5
-          });
+        text: t('headWizard3Text'),
+        notes: t('headWizard3Notes', {
+          per: 5
         }),
         per: 5,
         value: 40
       },
       4: {
-        text: (function() {
-          return i18n.t('headWizard4Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWizard4Notes', {
-            per: 7
-          });
+        text: t('headWizard4Text'),
+        notes: t('headWizard4Notes', {
+          per: 7
         }),
         per: 7,
         value: 60
       },
       5: {
-        text: (function() {
-          return i18n.t('headWizard5Text');
-        }),
-        notes: (function() {
-          return i18n.t('headWizard5Notes', {
-            per: 10
-          });
+        text: t('headWizard5Text'),
+        notes: t('headWizard5Notes', {
+          per: 10
         }),
         per: 10,
         value: 80,
@@ -10339,61 +10016,41 @@ gear = {
     },
     healer: {
       1: {
-        text: (function() {
-          return i18n.t('headHealer1Text');
-        }),
-        notes: (function() {
-          return i18n.t('headHealer1Notes', {
-            int: 2
-          });
+        text: t('headHealer1Text'),
+        notes: t('headHealer1Notes', {
+          int: 2
         }),
         int: 2,
         value: 15
       },
       2: {
-        text: (function() {
-          return i18n.t('headHealer2Text');
-        }),
-        notes: (function() {
-          return i18n.t('headHealer2Notes', {
-            int: 3
-          });
+        text: t('headHealer2Text'),
+        notes: t('headHealer2Notes', {
+          int: 3
         }),
         int: 3,
         value: 25
       },
       3: {
-        text: (function() {
-          return i18n.t('headHealer3Text');
-        }),
-        notes: (function() {
-          return i18n.t('headHealer3Notes', {
-            int: 5
-          });
+        text: t('headHealer3Text'),
+        notes: t('headHealer3Notes', {
+          int: 5
         }),
         int: 5,
         value: 40
       },
       4: {
-        text: (function() {
-          return i18n.t('headHealer4Text');
-        }),
-        notes: (function() {
-          return i18n.t('headHealer4Notes', {
-            int: 7
-          });
+        text: t('headHealer4Text'),
+        notes: t('headHealer4Notes', {
+          int: 7
         }),
         int: 7,
         value: 60
       },
       5: {
-        text: (function() {
-          return i18n.t('headHealer5Text');
-        }),
-        notes: (function() {
-          return i18n.t('headHealer5Notes', {
-            int: 9
-          });
+        text: t('headHealer5Text'),
+        notes: t('headHealer5Notes', {
+          int: 9
         }),
         int: 9,
         value: 80,
@@ -10402,13 +10059,9 @@ gear = {
     },
     special: {
       0: {
-        text: (function() {
-          return i18n.t('headSpecial0Text');
-        }),
-        notes: (function() {
-          return i18n.t('headSpecial0Notes', {
-            int: 20
-          });
+        text: t('headSpecial0Text'),
+        notes: t('headSpecial0Notes', {
+          int: 20
         }),
         int: 20,
         value: 150,
@@ -10418,13 +10071,9 @@ gear = {
         })
       },
       1: {
-        text: (function() {
-          return i18n.t('headSpecial1Text');
-        }),
-        notes: (function() {
-          return i18n.t('headSpecial1Notes', {
-            attrs: 6
-          });
+        text: t('headSpecial1Text'),
+        notes: t('headSpecial1Notes', {
+          attrs: 6
         }),
         con: 6,
         str: 6,
@@ -10437,13 +10086,9 @@ gear = {
         })
       },
       2: {
-        text: (function() {
-          return i18n.t('headSpecial2Text');
-        }),
-        notes: (function() {
-          return i18n.t('headSpecial2Notes', {
-            attrs: 25
-          });
+        text: t('headSpecial2Text'),
+        notes: t('headSpecial2Notes', {
+          attrs: 25
         }),
         int: 25,
         str: 25,
@@ -10455,12 +10100,8 @@ gear = {
       },
       nye: {
         event: events.winter,
-        text: (function() {
-          return i18n.t('headSpecialNyeText');
-        }),
-        notes: (function() {
-          return i18n.t('headSpecialNyeNotes');
-        }),
+        text: t('headSpecialNyeText'),
+        notes: t('headSpecialNyeNotes'),
         value: 0
       },
       yeti: {
@@ -10468,13 +10109,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'warrior';
         }),
-        text: (function() {
-          return i18n.t('headSpecialYetiText');
-        }),
-        notes: (function() {
-          return i18n.t('headSpecialYetiNotes', {
-            str: 9
-          });
+        text: t('headSpecialYetiText'),
+        notes: t('headSpecialYetiNotes', {
+          str: 9
         }),
         str: 9,
         value: 60
@@ -10484,13 +10121,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'rogue';
         }),
-        text: (function() {
-          return i18n.t('headSpecialSkiText');
-        }),
-        notes: (function() {
-          return i18n.t('headSpecialSkiNotes', {
-            per: 9
-          });
+        text: t('headSpecialSkiText'),
+        notes: t('headSpecialSkiNotes', {
+          per: 9
         }),
         per: 9,
         value: 60
@@ -10500,13 +10133,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'wizard';
         }),
-        text: (function() {
-          return i18n.t('headSpecialCanycaneText');
-        }),
-        notes: (function() {
-          return i18n.t('headSpecialCanycaneNotes', {
-            per: 7
-          });
+        text: t('headSpecialCanycaneText'),
+        notes: t('headSpecialCanycaneNotes', {
+          per: 7
         }),
         per: 7,
         value: 60
@@ -10516,13 +10145,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'healer';
         }),
-        text: (function() {
-          return i18n.t('headSpecialSnowflakeText');
-        }),
-        notes: (function() {
-          return i18n.t('headSpecialSnowflakeNotes', {
-            int: 7
-          });
+        text: t('headSpecialSnowflakeText'),
+        notes: t('headSpecialSnowflakeNotes', {
+          int: 7
         }),
         int: 7,
         value: 60
@@ -10530,8 +10155,8 @@ gear = {
     },
     mystery: {
       201402: {
-        text: 'Winged Helm',
-        notes: "This winged circlet imbues the wearer with the speed of the wind!",
+        text: t('headMystery201402Text'),
+        notes: t('headMystery201402Notes'),
         mystery: mystery['201402'],
         value: 10
       }
@@ -10540,72 +10165,48 @@ gear = {
   shield: {
     base: {
       0: {
-        text: (function() {
-          return i18n.t('shieldBase0Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldBase0Notes');
-        }),
+        text: t('shieldBase0Text'),
+        notes: t('shieldBase0Notes'),
         value: 0
       }
     },
     warrior: {
       1: {
-        text: (function() {
-          return i18n.t('shieldWarrior1Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldWarrior1Notes', {
-            con: 2
-          });
+        text: t('shieldWarrior1Text'),
+        notes: t('shieldWarrior1Notes', {
+          con: 2
         }),
         con: 2,
         value: 20
       },
       2: {
-        text: (function() {
-          return i18n.t('shieldWarrior2Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldWarrior2Notes', {
-            con: 3
-          });
+        text: t('shieldWarrior2Text'),
+        notes: t('shieldWarrior2Notes', {
+          con: 3
         }),
         con: 3,
         value: 35
       },
       3: {
-        text: (function() {
-          return i18n.t('shieldWarrior3Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldWarrior3Notes', {
-            con: 5
-          });
+        text: t('shieldWarrior3Text'),
+        notes: t('shieldWarrior3Notes', {
+          con: 5
         }),
         con: 5,
         value: 50
       },
       4: {
-        text: (function() {
-          return i18n.t('shieldWarrior4Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldWarrior4Notes', {
-            con: 7
-          });
+        text: t('shieldWarrior4Text'),
+        notes: t('shieldWarrior4Notes', {
+          con: 7
         }),
         con: 7,
         value: 70
       },
       5: {
-        text: (function() {
-          return i18n.t('shieldWarrior5Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldWarrior5Notes', {
-            con: 9
-          });
+        text: t('shieldWarrior5Text'),
+        notes: t('shieldWarrior5Notes', {
+          con: 9
         }),
         con: 9,
         value: 90,
@@ -10614,83 +10215,55 @@ gear = {
     },
     rogue: {
       0: {
-        text: (function() {
-          return i18n.t('shieldRogue0Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldRogue0Notes');
-        }),
+        text: t('weaponRogue0Text'),
+        notes: t('weaponRogue0Notes'),
         str: 0,
         value: 0
       },
       1: {
-        text: (function() {
-          return i18n.t('shieldRogue1Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldRogue1Notes', {
-            str: 2
-          });
+        text: t('weaponRogue1Text'),
+        notes: t('weaponRogue1Notes', {
+          str: 2
         }),
         str: 2,
         value: 20
       },
       2: {
-        text: (function() {
-          return i18n.t('shieldRogue2Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldRogue2Notes', {
-            str: 3
-          });
+        text: t('weaponRogue2Text'),
+        notes: t('weaponRogue2Notes', {
+          str: 3
         }),
         str: 3,
         value: 35
       },
       3: {
-        text: (function() {
-          return i18n.t('shieldRogue3Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldRogue3Notes', {
-            str: 4
-          });
+        text: t('weaponRogue3Text'),
+        notes: t('weaponRogue3Notes', {
+          str: 4
         }),
         str: 4,
         value: 50
       },
       4: {
-        text: (function() {
-          return i18n.t('shieldRogue4Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldRogue4Notes', {
-            str: 6
-          });
+        text: t('weaponRogue4Text'),
+        notes: t('weaponRogue4Notes', {
+          str: 6
         }),
         str: 6,
         value: 70
       },
       5: {
-        text: (function() {
-          return i18n.t('shieldRogue5Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldRogue5Notes', {
-            str: 8
-          });
+        text: t('weaponRogue5Text'),
+        notes: t('weaponRogue5Notes', {
+          str: 8
         }),
         str: 8,
         value: 90
       },
       6: {
-        text: (function() {
-          return i18n.t('shieldRogue6Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldRogue6Notes', {
-            str: 10
-          });
+        text: t('weaponRogue6Text'),
+        notes: t('weaponRogue6Notes', {
+          str: 10
         }),
         str: 10,
         value: 120,
@@ -10700,61 +10273,41 @@ gear = {
     wizard: {},
     healer: {
       1: {
-        text: (function() {
-          return i18n.t('shieldHealer1Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldHealer1Notes', {
-            con: 2
-          });
+        text: t('shieldHealer1Text'),
+        notes: t('shieldHealer1Notes', {
+          con: 2
         }),
         con: 2,
         value: 20
       },
       2: {
-        text: (function() {
-          return i18n.t('shieldHealer2Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldHealer2Notes', {
-            con: 4
-          });
+        text: t('shieldHealer2Text'),
+        notes: t('shieldHealer2Notes', {
+          con: 4
         }),
         con: 4,
         value: 35
       },
       3: {
-        text: (function() {
-          return i18n.t('shieldHealer3Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldHealer3Notes', {
-            con: 6
-          });
+        text: t('shieldHealer3Text'),
+        notes: t('shieldHealer3Notes', {
+          con: 6
         }),
         con: 6,
         value: 50
       },
       4: {
-        text: (function() {
-          return i18n.t('shieldHealer4Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldHealer4Notes', {
-            con: 9
-          });
+        text: t('shieldHealer4Text'),
+        notes: t('shieldHealer4Notes', {
+          con: 9
         }),
         con: 9,
         value: 70
       },
       5: {
-        text: (function() {
-          return i18n.t('shieldHealer5Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldHealer5Notes', {
-            con: 12
-          });
+        text: t('shieldHealer5Text'),
+        notes: t('shieldHealer5Notes', {
+          con: 12
         }),
         con: 12,
         value: 90,
@@ -10763,13 +10316,9 @@ gear = {
     },
     special: {
       0: {
-        text: (function() {
-          return i18n.t('shieldSpecial0Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldSpecial0Notes', {
-            per: 20
-          });
+        text: t('shieldSpecial0Text'),
+        notes: t('shieldSpecial0Notes', {
+          per: 20
         }),
         per: 20,
         value: 150,
@@ -10779,13 +10328,9 @@ gear = {
         })
       },
       1: {
-        text: (function() {
-          return i18n.t('shieldSpecial1Text');
-        }),
-        notes: (function() {
-          return i18n.t('shieldSpecial1Notes', {
-            attrs: 6
-          });
+        text: t('shieldSpecial1Text'),
+        notes: t('shieldSpecial1Notes', {
+          attrs: 6
         }),
         con: 6,
         str: 6,
@@ -10802,13 +10347,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'warrior';
         }),
-        text: (function() {
-          return i18n.t('shieldSpecialYetiText');
-        }),
-        notes: (function() {
-          return i18n.t('shieldSpecialYetiNotes', {
-            con: 7
-          });
+        text: t('shieldSpecialYetiText'),
+        notes: t('shieldSpecialYetiNotes', {
+          con: 7
         }),
         con: 7,
         value: 70
@@ -10818,13 +10359,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'rogue';
         }),
-        text: (function() {
-          return i18n.t('shieldSpecialSkiText');
-        }),
-        notes: (function() {
-          return i18n.t('shieldSpecialSkiNotes', {
-            str: 8
-          });
+        text: t('weaponSpecialSkiText'),
+        notes: t('weaponSpecialSkiNotes', {
+          str: 8
         }),
         str: 8,
         value: 90
@@ -10834,13 +10371,9 @@ gear = {
         canOwn: (function(u) {
           return u.stats["class"] === 'healer';
         }),
-        text: (function() {
-          return i18n.t('shieldSpecialSnowflakeText');
-        }),
-        notes: (function() {
-          return i18n.t('shieldSpecialSnowflakeNotes', {
-            con: 9
-          });
+        text: t('shieldSpecialSnowflakeText'),
+        notes: t('shieldSpecialSnowflakeNotes', {
+          con: 9
         }),
         con: 9,
         value: 70
@@ -10850,20 +10383,16 @@ gear = {
   back: {
     base: {
       0: {
-        text: (function() {
-          return i18n.t('backBase0Text');
-        }),
-        notes: (function() {
-          return i18n.t('backBase0Notes');
-        }),
+        text: t('backBase0Text'),
+        notes: t('backBase0Notes'),
         value: 0,
         last: true
       }
     },
     mystery: {
       201402: {
-        text: 'Golden Wings',
-        notes: "These shining wings have feathers that glitter in the sun!",
+        text: t('backMystery201402Text'),
+        notes: t('headMystery201402Notes'),
         mystery: mystery['201402'],
         value: 10
       }
@@ -10924,12 +10453,8 @@ _.each(gearTypes, function(type) {
 
 api.potion = {
   type: 'potion',
-  text: (function() {
-    return i18n.t('potionText');
-  }),
-  notes: (function() {
-    return i18n.t('potionNotes');
-  }),
+  text: t('potionText'),
+  notes: t('potionNotes'),
   value: 25,
   key: 'potion'
 };
@@ -10984,11 +10509,11 @@ diminishingReturns = function(bonus, max, halfway) {
 api.spells = {
   wizard: {
     fireball: {
-      text: 'Burst of Flames',
+      text: t('spellWizardFireballText'),
       mana: 10,
       lvl: 11,
       target: 'task',
-      notes: 'With a crack, flames burst from your staff, scorching a task. You deal high damage to the task, and gain additional experience (more experience for greens).',
+      notes: t('spellWizardFireballNotes'),
       cast: function(user, target) {
         var bonus;
         bonus = user._statsComputed.int * user.fns.crit('per');
@@ -11001,11 +10526,11 @@ api.spells = {
       }
     },
     mpheal: {
-      text: 'Ethereal Surge',
+      text: t('spellWizardMPHealText'),
       mana: 30,
       lvl: 12,
       target: 'party',
-      notes: "A flow of magical energy rushes from your hands and recharges your party. Your party recovers MP.",
+      notes: t('spellWizardMPHealNotes'),
       cast: function(user, target) {
         return _.each(target, function(member) {
           var bonus;
@@ -11018,11 +10543,11 @@ api.spells = {
       }
     },
     earth: {
-      text: 'Earthquake',
+      text: t('spellWizardEarthText'),
       mana: 35,
       lvl: 13,
       target: 'party',
-      notes: "The ground below your party's tasks cracks and shakes with extreme intensity, slowing them down and opening them up to more attacks. Your party gains a buff to experience.",
+      notes: t('spellWizardEarthNotes'),
       cast: function(user, target) {
         return _.each(target, function(member) {
           var _base;
@@ -11034,11 +10559,11 @@ api.spells = {
       }
     },
     frost: {
-      text: 'Chilling Frost',
+      text: t('spellWizardFrostText'),
       mana: 40,
       lvl: 14,
       target: 'self',
-      notes: "Ice erupts from every surface, swallowing your tasks and freezing them in place. Your dailies' streaks won't reset at the end of the day.",
+      notes: t('spellWizardFrostNotes'),
       cast: function(user, target) {
         return user.stats.buffs.streaks = true;
       }
@@ -11046,11 +10571,11 @@ api.spells = {
   },
   warrior: {
     smash: {
-      text: 'Brutal Smash',
+      text: t('spellWarriorSmashText'),
       mana: 10,
       lvl: 11,
       target: 'task',
-      notes: "You savagely hit a single task with all of your might, beating it into submission. The task's redness decreases.",
+      notes: t('spellWarriorSmashNotes'),
       cast: function(user, target) {
         target.value += 2.5 * (user._statsComputed.str / (user._statsComputed.str + 50)) * user.fns.crit('per');
         if (user.party.quest.key) {
@@ -11059,11 +10584,11 @@ api.spells = {
       }
     },
     defensiveStance: {
-      text: 'Defensive Stance',
+      text: t('spellWarriorDefensiveStanceText'),
       mana: 25,
       lvl: 12,
       target: 'self',
-      notes: "You take a moment to relax your body and enter a defensive stance to ready yourself for the tasks' next onslaught. Reduces damage from dailies at the end of the day.",
+      notes: t('spellWarriorDefensiveStanceNotes'),
       cast: function(user, target) {
         var _base;
         if ((_base = user.stats.buffs).con == null) {
@@ -11073,11 +10598,11 @@ api.spells = {
       }
     },
     valorousPresence: {
-      text: 'Valorous Presence',
+      text: t('spellWarriorValorousPresenceText'),
       mana: 20,
       lvl: 13,
       target: 'party',
-      notes: "Your presence emboldens the party. Their newfound courage gives them a boost of strength. Party members gain a buff to their STR.",
+      notes: t('spellWarriorValorousPresenceNotes'),
       cast: function(user, target) {
         return _.each(target, function(member) {
           var _base;
@@ -11089,11 +10614,11 @@ api.spells = {
       }
     },
     intimidate: {
-      text: 'Intimidating Gaze',
+      text: t('spellWarriorIntimidateText'),
       mana: 15,
       lvl: 14,
       target: 'party',
-      notes: "Your gaze strikes fear into the hearts of your party's enemies. The party gains a moderate boost to defense.",
+      notes: t('spellWarriorIntimidateNotes'),
       cast: function(user, target) {
         return _.each(target, function(member) {
           var _base;
@@ -11107,11 +10632,11 @@ api.spells = {
   },
   rogue: {
     pickPocket: {
-      text: 'Pickpocket',
+      text: t('spellRoguePickPocketText'),
       mana: 10,
       lvl: 11,
       target: 'task',
-      notes: "Your nimble fingers run through the task's pockets and find some treasures for yourself. You gain an increased gold bonus on the task, higher yet the 'fatter' (bluer) your task.",
+      notes: t('spellRoguePickPocketNotes'),
       cast: function(user, target) {
         var bonus;
         bonus = (target.value < 0 ? 1 : target.value + 2) + (user._statsComputed.per * 0.5);
@@ -11119,11 +10644,11 @@ api.spells = {
       }
     },
     backStab: {
-      text: 'Backstab',
+      text: t('spellRogueBackStabText'),
       mana: 15,
       lvl: 12,
       target: 'task',
-      notes: "Without a sound, you sweep behind a task and stab it in the back. You deal higher damage to the task, with a higher chance of a critical hit.",
+      notes: t('spellRogueBackStabNotes'),
       cast: function(user, target) {
         var bonus, _crit;
         _crit = user.fns.crit('per', .3);
@@ -11134,11 +10659,11 @@ api.spells = {
       }
     },
     toolsOfTrade: {
-      text: 'Tools of the Trade',
+      text: t('spellRogueToolsOfTradeText'),
       mana: 25,
       lvl: 13,
       target: 'party',
-      notes: "You share your thievery tools with the party to aid them in 'acquiring' more gold. The party's gold bonus for tasks and chance of drops is buffed for a day.",
+      notes: t('spellRogueToolsOfTradeNotes'),
       cast: function(user, target) {
         return _.each(target, function(member) {
           var _base;
@@ -11150,11 +10675,11 @@ api.spells = {
       }
     },
     stealth: {
-      text: 'Stealth',
+      text: t('spellRogueStealthText'),
       mana: 45,
       lvl: 14,
       target: 'self',
-      notes: "You duck into the shadows, pulling up your hood. Many dailies won't find you this night; fewer yet the higher your Perception.",
+      notes: t('spellRogueStealthNotes'),
       cast: function(user, target) {
         var _base;
         if ((_base = user.stats.buffs).stealth == null) {
@@ -11166,11 +10691,11 @@ api.spells = {
   },
   healer: {
     heal: {
-      text: 'Healing Light',
+      text: t('spellHealerHealText'),
       mana: 15,
       lvl: 11,
       target: 'self',
-      notes: 'Light covers your body, healing your wounds. You gain a boost to your health.',
+      notes: t('spellHealerHealNotes'),
       cast: function(user, target) {
         user.stats.hp += (user._statsComputed.con + user._statsComputed.int + 5) * .075;
         if (user.stats.hp > 50) {
@@ -11179,11 +10704,11 @@ api.spells = {
       }
     },
     brightness: {
-      text: 'Searing Brightness',
+      text: t('spellHealerBrightnessText'),
       mana: 15,
       lvl: 12,
       target: 'self',
-      notes: "You cast a burst of light that blinds all of your tasks. The redness of your tasks is reduced.",
+      notes: t('spellHealerBrightnessNotes'),
       cast: function(user, target) {
         return _.each(user.tasks, function(target) {
           if (target.type === 'reward') {
@@ -11194,11 +10719,11 @@ api.spells = {
       }
     },
     protectAura: {
-      text: 'Protective Aura',
+      text: t('spellHealerProtectAuraText'),
       mana: 30,
       lvl: 13,
       target: 'party',
-      notes: "A magical aura surrounds your party members, protecting them from damage. Your party members gain a buff to their defense.",
+      notes: t('spellHealerProtectAuraNotes'),
       cast: function(user, target) {
         return _.each(target, function(member) {
           var _base;
@@ -11210,11 +10735,11 @@ api.spells = {
       }
     },
     heallAll: {
-      text: 'Blessing',
+      text: t('spellHealerHealAllText'),
       mana: 25,
       lvl: 14,
       target: 'party',
-      notes: "Soothing light envelops your party and heals them of their injuries. Your party members gain a boost to their health.",
+      notes: t('spellHealerHealAllNotes'),
       cast: function(user, target) {
         return _.each(target, function(member) {
           member.stats.hp += (user._statsComputed.con + user._statsComputed.int + 5) * .04;
@@ -11227,11 +10752,11 @@ api.spells = {
   },
   special: {
     snowball: {
-      text: 'Snowball',
+      text: t('spellSpecialSnowballText'),
       mana: 0,
       value: 1,
       target: 'user',
-      notes: "Throw a snowball at a party member, what could possibly go wrong? Lasts until member's new day.",
+      notes: t('spellSpecialSnowballNotes'),
       cast: function(user, target) {
         var _base;
         target.stats.buffs.snowball = true;
@@ -11243,11 +10768,11 @@ api.spells = {
       }
     },
     salt: {
-      text: 'Salt',
+      text: t('spellSpecialSaltText'),
       mana: 0,
       value: 5,
       target: 'self',
-      notes: 'Someone has snowballed you. Ha ha, very funny. Now get this snow off me!',
+      notes: t('spellSpecialSaltNotes'),
       cast: function(user, target) {
         user.stats.buffs.snowball = false;
         return user.stats.gp -= 5;
@@ -11279,44 +10804,44 @@ api.special = api.spells.special;
 
 api.dropEggs = {
   Wolf: {
-    text: 'Wolf',
-    adjective: 'loyal'
+    text: t('dropEggWolfText'),
+    adjective: t('dropEggWolfAdjective')
   },
   TigerCub: {
-    text: 'Tiger Cub',
-    mountText: 'Tiger',
-    adjective: 'fierce'
+    text: t('dropEggTigerCubText'),
+    mountText: t('dropEggTigerCubMountText'),
+    adjective: t('dropEggTigerCubAdjective')
   },
   PandaCub: {
-    text: 'Panda Cub',
-    mountText: 'Panda',
-    adjective: 'gentle'
+    text: t('dropEggPandaCubText'),
+    mountText: t('dropEggPandaCubMountText'),
+    adjective: t('dropEggPandaCubAdjective')
   },
   LionCub: {
-    text: 'Lion Cub',
-    mountText: 'Lion',
-    adjective: 'regal'
+    text: t('dropEggLionCubText'),
+    mountText: t('dropEggLionCubMountText'),
+    adjective: t('dropEggLionCubAdjective')
   },
   Fox: {
-    text: 'Fox',
-    adjective: 'wily'
+    text: t('dropEggFoxText'),
+    adjective: t('dropEggFoxAdjective')
   },
   FlyingPig: {
-    text: 'Flying Pig',
-    adjective: 'whimsical'
+    text: t('dropEggFlyingPigText'),
+    adjective: t('dropEggFlyingPigAdjective')
   },
   Dragon: {
-    text: 'Dragon',
-    adjective: 'mighty'
+    text: t('dropEggDragonText'),
+    adjective: t('dropEggDragonAdjective')
   },
   Cactus: {
-    text: 'Cactus',
-    adjective: 'prickly'
+    text: t('dropEggCactusText'),
+    adjective: t('dropEggCactusAdjective')
   },
   BearCub: {
-    text: 'Bear Cub',
-    mountText: 'Bear',
-    adjective: 'cuddly'
+    text: t('dropEggBearCubText'),
+    mountText: t('dropEggBearCubMountText'),
+    adjective: t('dropEggBearCubAdjective')
   }
 };
 
@@ -11325,20 +10850,23 @@ _.each(api.dropEggs, function(egg, key) {
     canBuy: true,
     value: 3,
     key: key,
-    notes: "Find a hatching potion to pour on this egg, and it will hatch into a " + egg.adjective + " " + egg.text + ".",
+    notes: t('eggNotes', {
+      eggText: egg.text,
+      eggAdjective: egg.adjective
+    }),
     mountText: egg.text
   });
 });
 
 api.questEggs = {
   Gryphon: {
-    text: 'Gryphon',
-    adjective: 'regal',
+    text: t('questEggGryphonText'),
+    adjective: t('questEggGryphonAdjective'),
     canBuy: false
   },
   Hedgehog: {
-    text: 'Hedgehog',
-    adjective: 'prickly',
+    text: t('questEggHedgehogText'),
+    adjective: t('questEggHedgehogAdjective'),
     canBuy: false
   }
 };
@@ -11348,7 +10876,10 @@ _.each(api.questEggs, function(egg, key) {
     canBuy: false,
     value: 3,
     key: key,
-    notes: "Find a hatching potion to pour on this egg, and it will hatch into a " + egg.adjective + " " + egg.text + ".",
+    notes: t('eggNotes', {
+      eggText: egg.text,
+      eggAdjective: egg.adjective
+    }),
     mountText: egg.text
   });
 });
@@ -11371,43 +10902,43 @@ api.specialMounts = {
 api.hatchingPotions = {
   Base: {
     value: 2,
-    text: 'Base'
+    text: t('hatchingPotionBase')
   },
   White: {
     value: 2,
-    text: 'White'
+    text: t('hatchingPotionWhite')
   },
   Desert: {
     value: 2,
-    text: 'Desert'
+    text: t('hatchingPotionDesert')
   },
   Red: {
     value: 3,
-    text: 'Red'
+    text: t('hatchingPotionRed')
   },
   Shade: {
     value: 3,
-    text: 'Shade'
+    text: t('hatchingPotionShade')
   },
   Skeleton: {
     value: 3,
-    text: 'Skeleton'
+    text: t('hatchingPotionSkeleton')
   },
   Zombie: {
     value: 4,
-    text: 'Zombie'
+    text: t('hatchingPotionZombie')
   },
   CottonCandyPink: {
     value: 4,
-    text: 'Cotton Candy Pink'
+    text: t('hatchingPotionCottonCandyPink')
   },
   CottonCandyBlue: {
     value: 4,
-    text: 'Cotton Candy Blue'
+    text: t('hatchingPotionCottonCandyBlue')
   },
   Golden: {
     value: 5,
-    text: 'Golden'
+    text: t('hatchingPotionGolden')
   }
 };
 
@@ -11415,7 +10946,9 @@ _.each(api.hatchingPotions, function(pot, key) {
   return _.defaults(pot, {
     key: key,
     value: 2,
-    notes: "Pour this on an egg, and it will hatch as a " + pot.text + " pet."
+    notes: t('hatchingPotionNotes', {
+      potText: pot.text
+    })
   });
 });
 
@@ -11433,119 +10966,119 @@ api.questPets = _.transform(api.questEggs, function(m, egg) {
 
 api.food = {
   Meat: {
-    text: 'Meat',
+    text: t('foodMeat'),
     target: 'Base',
     article: ''
   },
   Milk: {
-    text: 'Milk',
+    text: t('foodMilk'),
     target: 'White',
     article: ''
   },
   Potatoe: {
-    text: 'Potato',
+    text: t('foodPotatoe'),
     target: 'Desert',
     article: 'a '
   },
   Strawberry: {
-    text: 'Strawberry',
+    text: t('foodStrawberry'),
     target: 'Red',
     article: 'a '
   },
   Chocolate: {
-    text: 'Chocolate',
+    text: t('foodChocolate'),
     target: 'Shade',
     article: ''
   },
   Fish: {
-    text: 'Fish',
+    text: t('foodFish'),
     target: 'Skeleton',
     article: 'a '
   },
   RottenMeat: {
-    text: 'Rotten Meat',
+    text: t('foodRottenMeat'),
     target: 'Zombie',
     article: ''
   },
   CottonCandyPink: {
-    text: 'Pink Cotton Candy',
+    text: t('foodCottonCandyPink'),
     target: 'CottonCandyPink',
     article: ''
   },
   CottonCandyBlue: {
-    text: 'Blue Cotton Candy',
+    text: t('foodCottonCandyBlue'),
     target: 'CottonCandyBlue',
     article: ''
   },
   Cake_Skeleton: {
     canBuy: false,
-    text: 'Bare Bones Cake',
+    text: t('foodCakeSkeleton'),
     target: 'Skeleton',
     article: ''
   },
   Cake_Base: {
     canBuy: false,
-    text: 'Basic Cake',
+    text: t('foodCakeBase'),
     target: 'Base',
     article: ''
   },
   Cake_CottonCandyBlue: {
     canBuy: false,
-    text: 'Candy Blue Cake',
+    text: t('foodCakeCottonCandyBlue'),
     target: 'CottonCandyBlue',
     article: ''
   },
   Cake_CottonCandyPink: {
     canBuy: false,
-    text: 'Candy Pink Cake',
+    text: t('foodCakeCottonCandyPink'),
     target: 'CottonCandyPink',
     article: ''
   },
   Cake_Shade: {
     canBuy: false,
-    text: 'Chocolate Cake',
+    text: t('foodCakeShade'),
     target: 'Shade',
     article: ''
   },
   Cake_White: {
     canBuy: false,
-    text: 'Cream Cake',
+    text: t('foodCakeWhite'),
     target: 'White',
     article: ''
   },
   Cake_Golden: {
     canBuy: false,
-    text: 'Honey Cake',
+    text: t('foodCakeGolden'),
     target: 'Golden',
     article: ''
   },
   Cake_Zombie: {
     canBuy: false,
-    text: 'Rotten Cake',
+    text: t('foodCakeZombie'),
     target: 'Zombie',
     article: ''
   },
   Cake_Desert: {
     canBuy: false,
-    text: 'Sand Cake',
+    text: t('foodCakeDesert'),
     target: 'Desert',
     article: ''
   },
   Cake_Red: {
     canBuy: false,
-    text: 'Strawberry Cake',
+    text: t('foodCakeRed'),
     target: 'Red',
     article: ''
   },
   Honey: {
-    text: 'Honey',
+    text: t('foodHoney'),
     target: 'Golden',
     article: ''
   },
   Saddle: {
-    text: 'Saddle',
+    text: t('foodSaddleText'),
     value: 5,
-    notes: 'Instantly raises one of your pets into a mount.'
+    notes: t('foodSaddleNotes')
   }
 };
 
@@ -11553,7 +11086,7 @@ _.each(api.food, function(food, key) {
   return _.defaults(food, {
     value: 1,
     key: key,
-    notes: "Feed this to a pet and it may grow into a sturdy steed.",
+    notes: t('foodNotes'),
     canBuy: true
   });
 });
@@ -11561,12 +11094,12 @@ _.each(api.food, function(food, key) {
 api.quests = {
   evilsanta: {
     canBuy: false,
-    text: "Trapper Santa",
-    notes: "You hear bemoaned roars deep in the icefields. You follow the roars and growls - punctuated by another voice's cackling - to a clearing in the woods where you see a fully-grown polar bear. She's caged and shackled, roaring for life. Dancing atop the the cage is a malicious little imp wearing castaway Christmas costumes. Vanquish Trapper Santa, and save the beast!",
-    completion: "Trapper Santa squeals in anger, and bounces off into the night. A grateful she-bear, through roars and growls, tries to tell you something. You take her back to the stables, where Matt Boch the whisperer listens to her tale with a gasp of horror. She has a cub! He ran off into the icefields when mama bear was captured. Help her find her baby!",
+    text: t('questEvilSantaText'),
+    notes: t('questEvilSantaNotes'),
+    completion: t('questEvilSantaCompletion'),
     value: 4,
     boss: {
-      name: "Trapper Santa",
+      name: t('questEvilSantaBoss'),
       hp: 300,
       str: 1
     },
@@ -11575,7 +11108,7 @@ api.quests = {
         {
           type: 'mounts',
           key: 'BearCub-Polar',
-          text: "Polar Bear (Mount)"
+          text: t('questEvilSantaDropBearCubPolarMount')
         }
       ],
       gp: 20,
@@ -11584,18 +11117,18 @@ api.quests = {
   },
   evilsanta2: {
     canBuy: false,
-    text: "Find The Cub",
-    notes: "Mama bear's cub had run off into the icefields when she was captured by the trapper. At the edge of the woods, she sniffs the air. You hear twig-snaps and snow crunch through the crystaline sound of the forest. Paw prints! You both start racing to follow the trail. Find all the prints and broken twigs, and retrieve her cub!",
-    completion: "You've found the cub! Mama and baby bear couldn't be more grateful. As a token, they've decided to keep you company till the end of days.",
+    text: t('questEvilSanta2Text'),
+    notes: t('questEvilSanta2Notes'),
+    completion: t('questEvilSanta2Completion'),
     value: 4,
     previous: 'evilsanta',
     collect: {
       tracks: {
-        text: 'Tracks',
+        text: t('questEvilSanta2CollectTracks'),
         count: 20
       },
       branches: {
-        text: 'Broken Twigs',
+        text: t('questEvilSanta2CollectBranches'),
         count: 10
       }
     },
@@ -11604,7 +11137,7 @@ api.quests = {
         {
           type: 'pets',
           key: 'BearCub-Polar',
-          text: "Polar Bear (Pet)"
+          text: t('questEvilSanta2DropBearCubPolarPet')
         }
       ],
       gp: 20,
@@ -11612,12 +11145,12 @@ api.quests = {
     }
   },
   gryphon: {
-    text: "The Fiery Gryphon",
-    notes: 'The grand beastmaster, @baconsaur, has come to your party seeking help. "Please, adventurers, you must help me! My prized gryphon has broken free and is terrorizing Habit City! If you can stop her, I could reward you with some of her eggs!"',
-    completion: 'Defeated, the mighty beast ashamedly slinks back to its master."My word! Well done, adventurers!" @baconsaur exclaims, "Please, have some of the gryphon\'s eggs. I am sure you will raise these young ones well!',
+    text: t('questGryphonText'),
+    notes: t('questGryphonNotes'),
+    completion: t('questGryphonCompletion'),
     value: 4,
     boss: {
-      name: "Fiery Gryphon",
+      name: t('questGryphonBoss'),
       hp: 300,
       str: 1.5
     },
@@ -11626,11 +11159,11 @@ api.quests = {
         {
           type: 'eggs',
           key: 'Gryphon',
-          text: "Gryphon (Egg)"
+          text: t('questGryphonDropGryphonEgg')
         }, {
           type: 'eggs',
           key: 'Gryphon',
-          text: "Gryphon (Egg)"
+          text: t('questGryphonDropGryphonEgg')
         }
       ],
       gp: 25,
@@ -11638,12 +11171,12 @@ api.quests = {
     }
   },
   hedgehog: {
-    text: "The Hedgebeast",
-    notes: 'Hedgehogs are a funny group of animals. They are some of the most affectionate pets a Habiteer could own. But rumor has it, if you feed them milk after midnight, they grow quite irritable. And fifty times their size. And @Inventrix did just that. Oops.',
-    completion: 'Your party successfully calmed down the hedgehog! After shrinking down to a normal size, she hobbles away to her eggs. She returns squeeking and nudging some of her eggs along towards your party. Hopefully, these hedgehogs like milk better!',
+    text: t('questHedgehogText'),
+    notes: t('questHedgehogNotes'),
+    completion: t('questHedgehogCompletion'),
     value: 4,
     boss: {
-      name: "Hedgebeast",
+      name: t('questHedgehogBoss'),
       hp: 400,
       str: 1.25
     },
@@ -11652,11 +11185,11 @@ api.quests = {
         {
           type: 'eggs',
           key: 'Hedgehog',
-          text: "Hedgehog (Egg)"
+          text: t('questHedgehogDropGryphonEgg')
         }, {
           type: 'eggs',
           key: 'Hedgehog',
-          text: "Hedgehog (Egg)"
+          text: t('questHedgehogDropGryphonEgg')
         }
       ],
       gp: 30,
@@ -11664,12 +11197,12 @@ api.quests = {
     }
   },
   vice1: {
-    text: "Free Yourself of the Dragon's Influence",
-    notes: "<p>They say there lies a terrible evil in the caverns of Mt. Habitica. A monster whose presence twists the wills of the strong heroes of the land, turning them towards bad habits and laziness! The beast is a grand dragon of immense power and comprised of the shadows themselves. Vice, the treacherous Shadow Wyrm. Brave Habiteers, stand up and defeat this foul beast once and for all, but only if you believe you can stand against its immense power. </p><h3>Vice Part 1: </h3><p>How can you expect to the fight the beast if it already has control over you? Don't fall victim to laziness and vice! Work hard to fight against the dragon's dark influence and dispel his hold on you! </p>",
+    text: t('questVice1Text'),
+    notes: t('questVice1Notes'),
     value: 4,
     lvl: 30,
     boss: {
-      name: "Vice's Shade",
+      name: t('questVice1Boss'),
       hp: 750,
       str: 1.5
     },
@@ -11678,7 +11211,7 @@ api.quests = {
         {
           type: 'quests',
           key: "vice2",
-          text: "Vice Part 2 (Scroll)"
+          text: t('questVice1DropVice2Quest')
         }
       ],
       gp: 20,
@@ -11686,14 +11219,14 @@ api.quests = {
     }
   },
   vice2: {
-    text: "Find the Lair of the Wyrm",
-    notes: "With Vice's influence over you dispelled, you feel a surge of strength you didn't know you had return to you. Confident in yourselves and your ability to withstand the wyrm's influence, your party makes it's way to Mt. Habitica. You approach the entrance to the mountain's caverns and pause. Swells of shadows, almost like fog, wisp out from the opening. It is near impossible to see anything in front of you. The light from your lanterns seem to end abruptly where the shadows begin. It is said that only magical light can pierce the dragon's infernal haze. If you can find enough light crystals, you could make your way to the dragon.",
+    text: t('questVice2Text'),
+    notes: t('questVice2Notes'),
     value: 4,
     lvl: 35,
     previous: 'vice1',
     collect: {
       lightCrystal: {
-        text: 'Light Crystal',
+        text: t('questVice2CollectLightCrystal'),
         count: 45
       }
     },
@@ -11702,7 +11235,7 @@ api.quests = {
         {
           type: 'quests',
           key: 'vice3',
-          text: "Vice Part 3 (Scroll)"
+          text: t('questVice2DropVice3Quest')
         }
       ],
       gp: 20,
@@ -11710,14 +11243,14 @@ api.quests = {
     }
   },
   vice3: {
-    text: "Vice Awakens",
-    notes: "After much effort, your party has discovered Vice's lair. The hulking monster eyes your party with distaste. As shadows swirl around you, a voice whispers through your head, \"More foolish citizens of Habitica come to stop me? Cute. You'd have been wise not to come.\" The scaly titan rears back its head and prepares to attack. This is your chance! Give it everything you've got and defeat Vice once and for all!",
-    completion: "The shadows dissipate from the cavern and a steely silence falls. My word, you've done it! You have defeated Vice! You and your party may finally breath a sigh of relief. Enjoy your victory, brave Habiteers, but take the lessons you've learned from battling Vice and move forward. There are still habits to be done and potentially worse evils to conquer!",
+    text: t('questVice3Text'),
+    notes: t('questVice3Notes'),
+    completion: t('questVice3Completion'),
     previous: 'vice2',
     value: 4,
     lvl: 40,
     boss: {
-      name: "Vice, the Shadow Wyrm",
+      name: t('questVice3Boss'),
       hp: 1500,
       str: 3
     },
@@ -11726,23 +11259,23 @@ api.quests = {
         {
           type: 'gear',
           key: "weapon_special_2",
-          text: "Stephen Weber's Shaft of the Dragon"
+          text: t('questVice3DropWeaponSpecial2')
         }, {
           type: 'eggs',
           key: 'Dragon',
-          text: "Dragon (Egg)"
+          text: t('questVice3DropDragonEgg')
         }, {
           type: 'eggs',
           key: 'Dragon',
-          text: "Dragon (Egg)"
+          text: t('questVice3DropDragonEgg')
         }, {
           type: 'hatchingPotions',
           key: 'Shade',
-          text: "Shade Hatching Potion"
+          text: t('questVice3DropShadeHatchingPotion')
         }, {
           type: 'hatchingPotions',
           key: 'Shade',
-          text: "Shade Hatching Potion"
+          text: t('questVice3DropShadeHatchingPotion')
         }
       ],
       gp: 100,
@@ -11772,24 +11305,24 @@ api.userDefaults = {
   habits: [
     {
       type: 'habit',
-      text: '1h Productive Work',
-      notes: 'When you create a new Habit, you can click the Edit icon and choose for it to represent a positive habit, a negative habit, or both. For some Habits, like this one, it only makes sense to gain points.',
+      text: t('defaultHabit1Text'),
+      notes: t('defaultHabit1Notes'),
       value: 0,
       up: true,
       down: false,
       attribute: 'per'
     }, {
       type: 'habit',
-      text: 'Eat Junk Food',
-      notes: 'For others, it only makes sense to *lose* points.',
+      text: t('defaultHabit2Text'),
+      notes: t('defaultHabit2Notes'),
       value: 0,
       up: false,
       down: true,
       attribute: 'con'
     }, {
       type: 'habit',
-      text: 'Take The Stairs',
-      notes: 'For the rest, both + and - make sense (stairs = gain, elevator = lose).',
+      text: t('defaultHabit3Text'),
+      notes: t('defaultHabit3Notes'),
       value: 0,
       up: true,
       down: true,
@@ -11799,24 +11332,24 @@ api.userDefaults = {
   dailys: [
     {
       type: 'daily',
-      text: '1h Personal Project',
-      notes: 'All tasks default to yellow when they are created. This means you will take only moderate damage when they are missed and will gain only a moderate reward when they are completed.',
+      text: t('defaultDaily1Text'),
+      notes: t('defaultDaily1Notes'),
       value: 0,
       completed: false,
       repeat: repeat,
       attribute: 'per'
     }, {
       type: 'daily',
-      text: 'Exercise',
-      notes: 'Dailies you complete consistently will turn from yellow to green to blue, helping you track your progress. The higher you move up the ladder, the less damage you take for missing and less reward you receive for completing the goal.',
+      text: t('defaultDaily2Text'),
+      notes: t('defaultDaily2Notes'),
       value: 3,
       completed: false,
       repeat: repeat,
       attribute: 'str'
     }, {
       type: 'daily',
-      text: '45m Reading',
-      notes: 'If you miss a daily frequently, it will turn darker shades of orange and red. The redder the task is, the more experience and gold it grants for success and the more damage you take for failure. This encourages you to focus on your shortcomings, the reds.',
+      text: t('defaultDaily3Text'),
+      notes: t('defaultDaily3Notes'),
       value: -10,
       completed: false,
       repeat: repeat,
@@ -11826,8 +11359,8 @@ api.userDefaults = {
   todos: [
     {
       type: 'todo',
-      text: 'Call Mom',
-      notes: 'While not completing a to-do in a set period of time will not hurt you, they will gradually change from yellow to red, thus becoming more valuable. This will encourage you to wrap up stale To-Dos.',
+      text: t('defaultTodo1Text'),
+      notes: t('defaultTodo1Notes'),
       value: -3,
       completed: false,
       attribute: 'per'
@@ -11836,23 +11369,23 @@ api.userDefaults = {
   rewards: [
     {
       type: 'reward',
-      text: '1 Episode of Game of Thrones',
-      notes: 'Custom rewards can come in many forms. Some people will hold off watching their favorite show unless they have the gold to pay for it.',
+      text: t('defaultReward1Text'),
+      notes: t('defaultReward1Notes'),
       value: 20
     }, {
       type: 'reward',
-      text: 'Cake',
-      notes: 'Other people just want to enjoy a nice piece of cake. Try to create rewards that will motivate you best.',
+      text: t('defaultReward2Text'),
+      notes: t('defaultReward2Notes'),
       value: 10
     }
   ],
   tags: [
     {
-      name: 'morning'
+      name: t('defaultTag1')
     }, {
-      name: 'afternoon'
+      name: t('defaultTag2')
     }, {
-      name: 'evening'
+      name: t('defaultTag3')
     }
   ]
 };
@@ -12539,7 +12072,7 @@ api.wrap = function(user, main) {
         }
         return typeof cb === "function" ? cb((item ? {
           code: 200,
-          message: "Your " + item.text + " broke."
+          message: "Your " + (item.text()) + " broke."
         } : null), user) : void 0;
       },
       reset: function(req, cb) {
@@ -12844,10 +12377,10 @@ api.wrap = function(user, main) {
         } else {
           if (food.target === potion) {
             userPets[pet] += 5;
-            message = "" + egg + " really likes the " + food.text + "!";
+            message = "" + egg + " really likes the " + (food.text()) + "!";
           } else {
             userPets[pet] += 2;
-            message = "" + egg + " eats the " + food.text + " but doesn't seem to enjoy it.";
+            message = "" + egg + " eats the " + (food.text()) + " but doesn't seem to enjoy it.";
           }
           if (userPets[pet] >= 50 && !user.items.mounts[pet]) {
             evolve();
@@ -12917,7 +12450,7 @@ api.wrap = function(user, main) {
           user.items.gear.owned[item.key] = true;
           message = user.fns.handleTwoHanded(item);
           if (message == null) {
-            message = "Bought " + item.text + ".";
+            message = "Bought " + (item.text()) + ".";
           }
           if (!user.achievements.ultimateGear && item.last) {
             user.fns.ultimateGear();
@@ -13302,11 +12835,11 @@ api.wrap = function(user, main) {
       }
       if (item.type === "shield" && ((_ref = (weapon = content.gear.flat[user.items.gear[type].weapon])) != null ? _ref.twoHanded : void 0)) {
         user.items.gear[type].weapon = 'weapon_base_0';
-        message = "" + weapon.text + " is two-handed";
+        message = "" + (weapon.text()) + " is two-handed";
       }
       if (item.twoHanded) {
         user.items.gear[type].shield = "shield_base_0";
-        message = "" + item.text + " is two-handed";
+        message = "" + (item.text()) + " is two-handed";
       }
       return message;
     },
@@ -13411,7 +12944,7 @@ api.wrap = function(user, main) {
           }
           user.items.food[drop.key] += 1;
           drop.type = 'Food';
-          drop.dialog = "You've found " + drop.article + drop.text + "! " + drop.notes;
+          drop.dialog = "You've found " + drop.article + (drop.text()) + "! " + (drop.notes());
         } else if (rarity > .3) {
           drop = user.fns.randomVal(_.where(content.eggs, {
             canBuy: true
@@ -13421,7 +12954,7 @@ api.wrap = function(user, main) {
           }
           user.items.eggs[drop.key]++;
           drop.type = 'Egg';
-          drop.dialog = "You've found a " + drop.text + " Egg! " + drop.notes;
+          drop.dialog = "You've found a " + (drop.text()) + " Egg! " + (drop.notes());
         } else {
           acceptableDrops = rarity < .02 ? ['Golden'] : rarity < .09 ? ['Zombie', 'CottonCandyPink', 'CottonCandyBlue'] : rarity < .18 ? ['Red', 'Shade', 'Skeleton'] : ['Base', 'White', 'Desert'];
           drop = user.fns.randomVal(_.pick(content.hatchingPotions, (function(v, k) {
@@ -13432,7 +12965,7 @@ api.wrap = function(user, main) {
           }
           user.items.hatchingPotions[drop.key]++;
           drop.type = 'HatchingPotion';
-          drop.dialog = "You've found a " + drop.text + " Hatching Potion! " + drop.notes;
+          drop.dialog = "You've found a " + (drop.text()) + " Hatching Potion! " + (drop.notes());
         }
         user._tmp.drop = drop;
         user.items.lastDrop.date = +(new Date);
@@ -13557,7 +13090,7 @@ api.wrap = function(user, main) {
         }
         user._tmp.drop = _.defaults(content.quests.vice1, {
           type: 'Quest',
-          dialog: "You've found the quest \"" + content.quests.vice1.text + "\"!"
+          dialog: "You've found the quest \"" + (content.quests.vice1.text()) + "\"!"
         });
       }
       if (!user.flags.rebirthEnabled && (user.stats.lvl >= 50 || user.achievements.ultimateGear || user.achievements.beastMaster)) {
